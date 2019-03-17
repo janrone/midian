@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Midian</string>
+    <string name="title_home">多米新零售</string>
+    <string name="title_zben">账本</string>
+    <string name="title_syj">生意经</string>
+    <string name="title_mine">我的</string>
+</resources>
