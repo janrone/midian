@@ -4,4 +4,5 @@
     <string name="title_zben">账本</string>
     <string name="title_syj">生意经</string>
     <string name="title_mine">我的</string>
+    <string name="title_login">登录/注册</string>
 </resources>
