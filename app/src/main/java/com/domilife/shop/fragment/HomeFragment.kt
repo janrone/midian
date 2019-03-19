@@ -1,8 +1,8 @@
-package com.midian.midian.fragment
+package com.midian.shop.fragment
 
 import android.os.Bundle
-import com.midian.midian.R
-import com.midian.midian.base.BaseFragment
+import com.midian.shop.R
+import com.midian.shop.base.BaseFragment
 
 /**
  * Created by janrone on 2019/3/16.

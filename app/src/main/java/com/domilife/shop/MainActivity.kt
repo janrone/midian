@@ -1,15 +1,16 @@
-package com.midian.midian
+package com.domilife.shop
 
 import android.os.Bundle
 import android.support.v4.app.FragmentTransaction
 import com.flyco.tablayout.listener.CustomTabEntity
 import com.flyco.tablayout.listener.OnTabSelectListener
 import com.hazz.kotlinmvp.mvp.model.bean.TabEntity
-import com.midian.midian.base.BaseActivity
-import com.midian.midian.fragment.HomeFragment
-import com.midian.midian.fragment.MineFragment
-import com.midian.midian.fragment.SyijingFragment
-import com.midian.midian.fragment.ZbenFragment
+import com.midian.shop.R
+import com.midian.shop.base.BaseActivity
+import com.midian.shop.fragment.HomeFragment
+import com.midian.shop.fragment.MineFragment
+import com.midian.shop.fragment.SyijingFragment
+import com.midian.shop.fragment.ZbenFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {

@@ -1,4 +1,4 @@
-package com.midian.midian.base
+package com.midian.shop.base
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity

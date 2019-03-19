@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.midian.midian.MainActivity">
+    tools:context="com.midian.shop.com.domilife.shop.MainActivity">
 
    <LinearLayout
        android:orientation="vertical"

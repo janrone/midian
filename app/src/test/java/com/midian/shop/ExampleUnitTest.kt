@@ -1,4 +1,4 @@
-package com.midian.midian
+package com.midian.shop
 
 import org.junit.Test
 
