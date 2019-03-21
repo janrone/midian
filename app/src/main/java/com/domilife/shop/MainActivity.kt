@@ -5,15 +5,22 @@ import android.support.v4.app.FragmentTransaction
 import com.flyco.tablayout.listener.CustomTabEntity
 import com.flyco.tablayout.listener.OnTabSelectListener
 import com.hazz.kotlinmvp.mvp.model.bean.TabEntity
-import com.midian.shop.R
-import com.midian.shop.base.BaseActivity
-import com.midian.shop.fragment.HomeFragment
-import com.midian.shop.fragment.MineFragment
-import com.midian.shop.fragment.SyijingFragment
-import com.midian.shop.fragment.ZbenFragment
+import com.domilife.shop.R
+import com.domilife.shop.base.BaseActivity
+import com.domilife.shop.fragment.HomeFragment
+import com.domilife.shop.fragment.MineFragment
+import com.domilife.shop.fragment.SyijingFragment
+import com.domilife.shop.fragment.ZbenFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {
+    override fun initView() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun initData() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
 
     private val mTitles = arrayOf("首页", "账本", "生意经", "我的")

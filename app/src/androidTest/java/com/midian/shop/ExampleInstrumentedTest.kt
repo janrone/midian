@@ -1,4 +1,4 @@
-package com.midian.shop
+package com.domilife.shop
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4

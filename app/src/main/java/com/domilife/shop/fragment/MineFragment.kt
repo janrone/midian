@@ -1,8 +1,8 @@
-package com.midian.shop.fragment
+package com.domilife.shop.fragment
 
 import android.os.Bundle
-import com.midian.shop.R
-import com.midian.shop.base.BaseFragment
+import com.domilife.shop.R
+import com.domilife.shop.base.BaseFragment
 
 /**
  * Created by janrone on 2019/3/16.

@@ -1,4 +1,4 @@
-package com.midian.shop
+package com.domilife.shop
 
 import org.junit.Test
 

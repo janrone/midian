@@ -1,8 +1,8 @@
-package com.midian.shop.net
+package com.domilife.shop.net
 
 import com.domilife.shop.DMApplication
-import com.midian.shop.utils.NetworkUtil
-import com.midian.shop.utils.Preference
+import com.domilife.shop.utils.NetworkUtil
+import com.domilife.shop.utils.Preference
 import okhttp3.*
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

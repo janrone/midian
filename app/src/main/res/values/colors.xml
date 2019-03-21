@@ -3,7 +3,10 @@
     <color name="colorPrimary">#FFFFFF</color>
     <!--<color name="colorPrimary">#2E2D32</color>-->
     <color name="colorPrimaryDark">#FFFFFF</color>
-    <color name="colorAccent">#EF5362</color>
+
+    <color name="colorPrimary2">#2E2D32</color>
+    <color name="colorPrimaryDark2">#2E2D32</color>
+    <color name="colorAccent">#303742</color>
 
     <color name="color_gray">#9B9B9B</color>
     
@@ -29,12 +32,14 @@
 
     <!-- title 半透明背景颜色 -->
     <color name="color_title_bg">#2E2D32</color>
+    <color name="color_title_light_bg">#FAFAFA</color>
     <!-- 默认背景色 -->
     <color name="backgroundColor">#EEEEEE</color>
 
     <!-- white -->
     <color name="color_white">#FFFFFF</color>
     <color name="color_black">#000000</color>
+    <color name="color_transparent">#00000000</color>
 
     <color name="color_yellow">#F1AA0E</color>
     <color name="color_">#9B9B9B</color>

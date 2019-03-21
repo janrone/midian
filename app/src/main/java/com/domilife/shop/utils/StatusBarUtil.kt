@@ -1,4 +1,4 @@
-package com.midian.shop.utils
+package com.domilife.shop.utils
 
 import android.annotation.TargetApi
 import android.app.Activity

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:navigationIcon="@mipmap/ic_back"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/color_title_bg">
+
+            <TextView
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:id="@+id/tv_header_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="@string/title_reg"
+                android:textColor="@color/color_white"
+                android:textSize="18sp" />
+
+    </android.support.v7.widget.Toolbar>
+
+
+
+    <RelativeLayout
+        android:layout_marginTop="70dp"
+        android:padding="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:id="@+id/tv_i_code"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="邀请码"
+            android:textColor="#4A4A4A"
+            android:textSize="16sp" />
+
+        <EditText
+            android:layout_toLeftOf="@+id/iv_close_small"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/tv_i_code"
+            android:layout_marginRight="15dp"
+            android:id="@+id/et_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="请输入邀请码"
+            android:inputType="number"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:textCursorDrawable="@null"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:id="@+id/iv_cam"
+            android:padding="8dp"
+            android:src="@mipmap/ic_cam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_marginRight="16dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/iv_cam"
+            android:id="@+id/iv_close_small"
+            android:padding="8dp"
+            android:src="@mipmap/ic_close_small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="#F4F5F9"/>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_marginBottom="18dp"
+        android:id="@+id/ll_invite"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="66dp">
+        <ImageView
+            android:id="@+id/iv_head"
+            android:layout_marginLeft="15dp"
+            android:layout_width="46dp"
+            android:layout_height="46dp" />
+
+        <LinearLayout
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:textSize="14sp"
+                android:layout_marginBottom="6dp"
+                android:textColor="#4A4A4A"
+                android:text="多米生活"
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textSize="12sp"
+                android:textColor="#9B9B9B"
+                android:text="邀请你加入多米小店"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <TextView
+        android:layout_marginBottom="45dp"
+        android:padding="6dp"
+        android:id="@+id/tv_no_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="没有邀请码？"
+        android:textColor="#9B9B9B"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_next"
+        style="@style/dmBtn"
+        android:textSize="20sp"
+        android:textColor="@color/color_white"
+        android:text="下一步"
+        android:background="@drawable/shape_btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="49dp" />
+
+</LinearLayout>

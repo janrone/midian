@@ -1,19 +1,22 @@
-package com.midian.shop.activity
+package com.domilife.shop.activity
 
 import android.graphics.Color
 import android.graphics.Paint
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import cn.smssdk.EventHandler
 import cn.smssdk.SMSSDK
+import com.domilife.shop.Constants
 import com.jakewharton.rxbinding2.view.RxView
 
-import com.midian.shop.R
-import com.midian.shop.base.BaseActivity
-import com.midian.shop.net.RetrofitManager
-import com.midian.shop.utils.StatusBarUtil
+import com.domilife.shop.R
+import com.domilife.shop.base.BaseActivity
+import com.domilife.shop.net.RetrofitManager
+import com.domilife.shop.utils.StatusBarUtil
+import com.domilife.shop.view.LoadingDialog
 import io.reactivex.Flowable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -25,10 +28,14 @@ import java.util.regex.Pattern
 
 class LoginActivity : BaseActivity() {
 
+    private var mLoginType = 0
+    var mLoadingDialog: LoadingDialog? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         SMSSDK.registerEventHandler(eh)
         initView()
+        initData()
     }
 
     val eh: EventHandler = object : EventHandler() {
@@ -40,6 +47,7 @@ class LoginActivity : BaseActivity() {
                     runOnUiThread {
                         // TODO 处理验证码验证通过的结果
                         toast("验证通过")
+                        //Log.d(Constants.TAG, "onStart")
                     }
                 } else if (event == SMSSDK.EVENT_GET_VERIFICATION_CODE) {
                     // 请注意，此时只是完成了发送验证码的请求，验证码短信还需要几秒钟之后才送达
@@ -60,7 +68,7 @@ class LoginActivity : BaseActivity() {
         return R.layout.activity_login
     }
 
-    private fun initView(){
+    override fun initView() {
         this?.let { StatusBarUtil.darkMode(it) }
         //this?.let { StatusBarUtil.setPaddingSmart(it, toolbar) }
 
@@ -74,7 +82,7 @@ class LoginActivity : BaseActivity() {
 
             // 请求验证码，其中country表示国家代码，如“86”；phone表示手机号码，如“13800138000”
             val mobile = et_phone.checkBlank("手机号不能为空") ?: return@setOnClickListener
-            if(!checkPhoneNum(mobile)){
+            if (!checkPhoneNum(mobile)) {
                 toast("手机号格式不正确")
                 return@setOnClickListener
             }
@@ -83,12 +91,34 @@ class LoginActivity : BaseActivity() {
         }
 
 
-        RxView.clicks(tv_login).throttleFirst(20, TimeUnit.SECONDS).subscribe {
-            tv_login.setOnClickListener {
-                goLogin()
+        RxView.clicks(tv_login).throttleFirst(20, TimeUnit.SECONDS)
+                .subscribe {
+                    if (mLoginType == 0) {
+                        goLogin()
+                    } else {
+                        goLoginPwd()
+                    }
+                }
+
+        tv_line.setOnClickListener {
+            if (mLoginType == 0) {
+                mLoginType = 1
+                tv_line.text = "使用验证码登录"
+                ll3.visibility = View.VISIBLE
+                ll2.visibility = View.GONE
+            } else {
+                tv_line.text = "使用密码登录"
+                mLoginType = 0
+                ll3.visibility = View.GONE
+                ll2.visibility = View.VISIBLE
             }
+            //if(mLoginType == 0) mLoginType=1 else mLoginType=0
         }
 
+    }
+
+    override fun initData() {
+        mLoadingDialog = LoadingDialog(this)
     }
 
     private fun timer(getCode: TextView) {
@@ -97,7 +127,7 @@ class LoginActivity : BaseActivity() {
         Flowable.interval(0, 1, TimeUnit.SECONDS)
                 .onBackpressureBuffer()//加上背压策略
                 .take(count) //设置循环次数
-                .map{ aLong ->
+                .map { aLong ->
                     count - aLong //
                 }
                 .observeOn(AndroidSchedulers.mainThread())
@@ -126,7 +156,7 @@ class LoginActivity : BaseActivity() {
                 })
     }
 
-    fun checkPhoneNum(num: String): Boolean{
+    fun checkPhoneNum(num: String): Boolean {
         val regExp = "^((13[0-9])|(15[^4])|(18[0-9])|(17[0-8])|(14[5-9])|(166)|(19[8,9])|)\\d{8}$"
         val p = Pattern.compile(regExp)
         val m = p.matcher(num)
@@ -143,13 +173,13 @@ class LoginActivity : BaseActivity() {
     }
 
 
-    private fun toast(message: String){
-        Toast.makeText(this,message,Toast.LENGTH_LONG).show()
+    private fun toast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
     }
 
-    private fun goLogin(){
+    private fun goLogin() {
         val mobile = et_phone.checkBlank("手机号不能为空") ?: return
-        if(!checkPhoneNum(mobile)){
+        if (!checkPhoneNum(mobile)) {
             toast("手机号格式不正确")
             return
         }
@@ -157,27 +187,49 @@ class LoginActivity : BaseActivity() {
 
 
         //SMSSDK.submitVerificationCode("86", mobile, code)
-        shopsmslogin(mobile,code)
-
+        shopsmslogin(mobile, code)
 
     }
 
-    private fun shopsmslogin(phone: String, code: String){
-        RetrofitManager.service.shopsmslogin("shopsmslogin", phone, code)
-                .subscribeOn(Schedulers.io())
-                .unsubscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe({
-                    result ->
-                    Log.d("Kotlin", result.toString())
-                }, {
-                    error ->
-                    error.printStackTrace()
-                }, {
-                    Log.d("Kotlin", "onComplete")
-                }, {
-                    Log.d("Kotlin", "onStart")
-                })
+    private fun goLoginPwd() {
+        val mobile = et_phone.checkBlank("手机号不能为空") ?: return
+        if (!checkPhoneNum(mobile)) {
+            toast("手机号格式不正确")
+            return
+        }
+        val pwd = et_pwd.checkBlank("密码不能为空") ?: return
+
+        //shopsmslogin(mobile,pwd)
+
+    }
+
+    private fun shopsmslogin(phone: String, code: String) {
+        try {
+            mLoadingDialog?.show()
+            RetrofitManager.service.shopsmslogin("shopsmslogin", phone, code)
+                    .subscribeOn(Schedulers.io())
+                    .unsubscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe({ result ->
+                        mLoadingDialog?.hide()
+                        Log.d(Constants.TAG, result.toString())
+                    }, { error ->
+                        mLoadingDialog?.hide()
+                        toast(error.toString())
+                        Log.d(Constants.TAG, error.toString())
+                    }
+//                            , {
+//                        Log.d(Constants.TAG, "onComplete")
+//                    }, {
+//                        Log.d(Constants.TAG, "onStart")
+//                    }
+                    )
+        } catch (e: Exception) {
+            mLoadingDialog?.hide()
+            Log.d(Constants.TAG, e.toString())
+        } finally {
+            //mLoadingDialog?.hide()
+        }
 
     }
 

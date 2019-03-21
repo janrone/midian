@@ -1,4 +1,4 @@
-package com.midian.shop.base
+package com.domilife.shop.base
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -24,15 +24,9 @@ abstract class BaseActivity : AppCompatActivity(){
      */
     abstract fun layoutId(): Int
 
+    abstract fun initView()
 
-//    /**
-//     * 初始化数据
-//     */
-//    abstract fun initData()
-//
-//    /**
-//     * 初始化 View
-//     */
-//    abstract fun initView()
+    abstract fun initData()
+
 
 }

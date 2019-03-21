@@ -1,4 +1,4 @@
-package com.midian.shop.net
+package com.domilife.shop.net
 
 import org.json.JSONObject
 

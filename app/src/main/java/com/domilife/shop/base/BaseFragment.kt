@@ -1,4 +1,4 @@
-package com.midian.shop.base
+package com.domilife.shop.base
 
 import android.os.Bundle
 import android.support.annotation.LayoutRes
