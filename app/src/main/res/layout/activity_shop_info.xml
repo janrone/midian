@@ -139,7 +139,7 @@
         android:padding="16dp">
 
         <TextView
-            android:id="@+id/tv_id_name"
+            android:id="@+id/tv_ser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -148,11 +148,11 @@
             android:textSize="16sp" />
 
         <EditText
-            android:id="@+id/et_name"
+            android:id="@+id/et_ser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
-            android:layout_toRightOf="@+id/tv_id_name"
+            android:layout_toRightOf="@+id/tv_ser"
             android:background="@null"
             android:hint="服务费"
             android:inputType="number"
@@ -234,7 +234,7 @@
             android:textSize="16sp" />
 
         <EditText
-            android:id="@+id/et_name"
+            android:id="@+id/et_pel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
@@ -264,7 +264,7 @@
         android:padding="16dp">
 
         <TextView
-            android:id="@+id/tv_id_name"
+            android:id="@+id/tv_id_ph"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -273,11 +273,11 @@
             android:textSize="16sp" />
 
         <EditText
-            android:id="@+id/et_name"
+            android:id="@+id/et_phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
-            android:layout_toRightOf="@+id/tv_id_name"
+            android:layout_toRightOf="@+id/tv_id_ph"
             android:background="@null"
             android:hint="必填，请输入"
             android:inputType="number"
@@ -289,25 +289,6 @@
 
 
     </RelativeLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="15dp">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/ic_tips" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="*请上传真实有效的信息"
-            android:textColor="#EB5242"
-            android:textSize="10dp" />
-    </LinearLayout>
 
     <TextView
         style="@style/dmBtn"

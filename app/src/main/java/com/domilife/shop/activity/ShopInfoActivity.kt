@@ -1,13 +1,10 @@
 package com.domilife.shop.activity
 
-import android.graphics.Paint
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.view.View
-import com.domilife.shop.Constants
 import com.domilife.shop.R
 import com.domilife.shop.base.BaseActivity
-import kotlinx.android.synthetic.main.activity_shop_info_zz.*
+import kotlinx.android.synthetic.main.activity_shop_info.*
 
 
 class ShopInfoActivity : BaseActivity() {
@@ -26,15 +23,12 @@ class ShopInfoActivity : BaseActivity() {
     override fun initView() {
         toolbar?.setNavigationOnClickListener { finish() }
 
+        ll_shop_info.setOnClickListener {
+            startActivity(Intent(this, MapControlActivity::class.java))
+        }
+
     }
 
-    private fun setDateInput(i: Int){
-        if(i== radio0.id){
-            rl_to_date.visibility = View.VISIBLE
-        }else{
-            rl_to_date.visibility = View.GONE
-        }
-    }
 
     override fun initData() {
 

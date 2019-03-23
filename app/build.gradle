@@ -14,7 +14,15 @@ MobSDK {
     SMSSDK {}
 }
 
+repositories {
+    flatDir {
+        dir 'libs'
+    }
+}
+
+
 android {
+
     compileSdkVersion 26
     defaultConfig {
         applicationId "com.domilife.shop"
@@ -28,6 +36,12 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDir 'libs'
         }
     }
 }
@@ -52,7 +66,11 @@ dependencies {
 
 
     implementation "com.squareup.retrofit2:retrofit:2.3.0"
-            implementation "com.squareup.retrofit2:converter-gson:2.3.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.3.0"
     implementation "com.squareup.retrofit2:adapter-rxjava2:2.3.0"
-            implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+
+
+    implementation 'com.contrarywind:Android-PickerView:4.1.7'
+
 }
