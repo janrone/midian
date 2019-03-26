@@ -4,9 +4,9 @@ import android.os.Bundle
 import android.support.v4.app.FragmentTransaction
 import com.flyco.tablayout.listener.CustomTabEntity
 import com.flyco.tablayout.listener.OnTabSelectListener
-import com.hazz.kotlinmvp.mvp.model.bean.TabEntity
 import com.domilife.shop.R
 import com.domilife.shop.base.BaseActivity
+import com.domilife.shop.bean.TabEntity
 import com.domilife.shop.fragment.HomeFragment
 import com.domilife.shop.fragment.MineFragment
 import com.domilife.shop.fragment.SyijingFragment

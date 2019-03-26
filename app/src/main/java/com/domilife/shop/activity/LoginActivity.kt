@@ -1,5 +1,6 @@
 package com.domilife.shop.activity
 
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.Paint
 import android.os.Bundle
@@ -14,9 +15,11 @@ import com.jakewharton.rxbinding2.view.RxView
 
 import com.domilife.shop.R
 import com.domilife.shop.base.BaseActivity
+import com.domilife.shop.bean.InCodeBean
 import com.domilife.shop.net.RetrofitManager
 import com.domilife.shop.utils.StatusBarUtil
 import com.domilife.shop.view.LoadingDialog
+import com.google.gson.Gson
 import io.reactivex.Flowable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -91,7 +94,7 @@ class LoginActivity : BaseActivity() {
         }
 
 
-        RxView.clicks(tv_login).throttleFirst(20, TimeUnit.SECONDS)
+        RxView.clicks(tv_login).throttleFirst(5, TimeUnit.SECONDS)
                 .subscribe {
                     if (mLoginType == 0) {
                         goLogin()
@@ -213,6 +216,23 @@ class LoginActivity : BaseActivity() {
                     .subscribe({ result ->
                         mLoadingDialog?.hide()
                         Log.d(Constants.TAG, result.toString())
+                        if(result.code ==0){
+                            var mock = "{\"code\":1,\"data\":{\"accountId\":1000984,\"isBindInvNo\":0,\"isCompQuality\":0,\"isCompShopMsg\":0,\"isShopPassed\":0},\"msg\":\"\"}"
+                            var inCodeBean: InCodeBean = Gson().fromJson(mock,InCodeBean::class.java)
+                            //var inCodeBean:InCodeBean= Gson().fromJson(result.data.toString(),InCodeBean::class.java)
+                            if(inCodeBean.isBindInvNo== 1){
+                                if(inCodeBean.isCompQuality !=1 || inCodeBean.isCompShopMsg != 1){
+                                    var intent= Intent(this, ShopInfoMainActivity::class.java)
+                                    intent.putExtra("data", inCodeBean)
+                                    startActivity(intent)
+                                }
+
+                            }else{
+                                var intent= Intent(this, InviteCodeActivity::class.java)
+                                intent.putExtra("data", inCodeBean)
+                                startActivity(intent)
+                            }
+                        }
                     }, { error ->
                         mLoadingDialog?.hide()
                         toast(error.toString())

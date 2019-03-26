@@ -1,4 +1,4 @@
-package com.hazz.kotlinmvp.mvp.model.bean
+package com.domilife.shop.bean
 
 import com.flyco.tablayout.listener.CustomTabEntity
 

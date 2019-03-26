@@ -61,7 +61,7 @@
             android:textSize="14sp"
             android:layout_centerVertical="true"
             android:layout_toLeftOf="@+id/iv_a1"
-            android:id="@+id/iv_close_small"
+            android:id="@+id/iv_shop_info"
 
             android:text="未完善"
             android:layout_width="wrap_content"
@@ -101,7 +101,7 @@
 
         <TextView
             android:textSize="14sp"
-
+            android:id="@+id/tv_zz"
             android:layout_centerVertical="true"
             android:layout_toLeftOf="@+id/iv_a2"
             android:text="未完善"
