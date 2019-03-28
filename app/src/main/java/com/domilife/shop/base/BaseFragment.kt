@@ -17,10 +17,17 @@ abstract class BaseFragment: Fragment() {
         return inflater.inflate(getLayoutId(),null)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        initView()
+    }
 
     /**
      * 加载布局
      */
     @LayoutRes
     abstract fun getLayoutId():Int
+
+    abstract fun initView()
 }

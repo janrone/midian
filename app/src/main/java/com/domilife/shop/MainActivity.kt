@@ -15,20 +15,19 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {
     override fun initView() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun initData() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
     }
 
 
     private val mTitles = arrayOf("首页", "账本", "生意经", "我的")
 
     // 未被选中的图标
-    private val mIconUnSelectIds = intArrayOf(R.mipmap.ic_home_normal, R.mipmap.ic_discovery_normal, R.mipmap.ic_hot_normal, R.mipmap.ic_mine_normal)
+    private val mIconUnSelectIds = intArrayOf(R.mipmap.ic_home_n, R.mipmap.ic_home_zb_n, R.mipmap.ic_syj_n, R.mipmap.ic_mine_n)
     // 被选中的图标
-    private val mIconSelectIds = intArrayOf(R.mipmap.ic_home_selected, R.mipmap.ic_discovery_selected, R.mipmap.ic_hot_selected, R.mipmap.ic_mine_selected)
+    private val mIconSelectIds = intArrayOf(R.mipmap.ic_home_p, R.mipmap.ic_home_zb_p, R.mipmap.ic_syj_p, R.mipmap.ic_mine_p)
 
     private val mTabEntities = ArrayList<CustomTabEntity>()
 

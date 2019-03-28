@@ -8,11 +8,19 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="activityAnimation" parent="@android:style/Animation">
+                <item name="android:activityOpenEnterAnimation">@anim/in_right</item>
+          <item name="android:activityOpenExitAnimation">@anim/out_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/in_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/out_right</item>
+    </style>
+
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="colorPrimary">@color/colorPrimary2</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark2</item>
+        <item name="android:windowAnimationStyle">@style/activityAnimation</item>
     </style>
 
     <style name="LoginTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -40,6 +48,19 @@
         <item name="android:textSize">20sp</item>
         <item name="android:layout_marginLeft">16dp</item>
         <item name="android:layout_marginRight">16dp</item>
+    </style>
+
+    <style name="Base.Widget.Design.TabLayout" parent="android:Widget">
+        <item name="tabIndicatorColor">#DBAB59</item>
+        <item name="tabIndicatorHeight">2dp</item>
+        <item name="tabTextAppearance">@style/TextAppearance.Design.Tab</item>
+        <item name="tabSelectedTextColor">#FFFFFF</item>
+    </style>
+
+    <style name="TextAppearance.Design.Tab" parent="TextAppearance.AppCompat.Button">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="textAllCaps">true</item>
     </style>
 
 </resources>

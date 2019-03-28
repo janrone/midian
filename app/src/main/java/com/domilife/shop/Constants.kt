@@ -25,5 +25,7 @@ class Constants private constructor() {
 
         //通过邀请码查询用户信息
         var SHOPACCOUNTBYINVNO:String = "shopaccountbyinvno"
+        var SHOPACCOUNTBINDINVNO:String = "shopaccountbindinvno"
+        var SHOPCATEGORY:String = "shopcategory"
     }
 }

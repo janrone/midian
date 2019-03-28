@@ -21,10 +21,12 @@ class SyijingFragment : BaseFragment() {
         }
     }
 
-
-
     override fun getLayoutId(): Int {
         return R.layout.fragment_syj
+    }
+
+    override fun initView() {
+
     }
 
 }

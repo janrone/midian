@@ -7,12 +7,6 @@ import com.domilife.shop.base.BaseActivity
 
 class TempActivity : BaseActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        initView()
-        initData()
-
-    }
 
     override fun layoutId(): Int {
         return R.layout.activity_login

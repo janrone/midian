@@ -21,10 +21,12 @@ class ZbenFragment : BaseFragment() {
         }
     }
 
-
-
     override fun getLayoutId(): Int {
         return R.layout.fragment_zben
+    }
+
+    override fun initView() {
+
     }
 
 }

@@ -1,7 +1,9 @@
 package com.domilife.shop.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import com.domilife.shop.R
+import com.domilife.shop.activity.ShopInfoMainActivity
 import com.domilife.shop.base.BaseFragment
 
 /**
@@ -21,9 +23,11 @@ class MineFragment : BaseFragment() {
         }
     }
 
-
-
     override fun getLayoutId(): Int {
-        return R.layout.fragment_home
+        return R.layout.fragment_mine
+    }
+
+    override fun initView() {
+
     }
 }

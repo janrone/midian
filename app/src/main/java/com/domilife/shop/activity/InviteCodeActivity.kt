@@ -3,11 +3,13 @@ package com.domilife.shop.activity
 import android.content.Intent
 import android.graphics.Paint
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Log
 import android.view.View
 import com.domilife.shop.Constants
 import com.domilife.shop.R
 import com.domilife.shop.base.BaseActivity
+import com.domilife.shop.bean.InCodeBean
 import com.domilife.shop.bean.InviteInfoBean
 import com.domilife.shop.net.RetrofitManager
 import com.domilife.shop.utils.GlideApp
@@ -21,14 +23,8 @@ import java.util.concurrent.TimeUnit
 
 class InviteCodeActivity : BaseActivity() {
 
-    private var hasInviteCode = 0;
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        initView()
-        initData()
-
-    }
+    private var hasInviteCode = 0
+    private var inviteInfo: InviteInfoBean? = null
 
     override fun layoutId(): Int {
         return R.layout.activity_code
@@ -43,11 +39,6 @@ class InviteCodeActivity : BaseActivity() {
 
     override fun initData() {
 
-        RxView.clicks(tv_next).throttleFirst(3, TimeUnit.SECONDS)
-                .subscribe {
-                    startActivity(Intent(this, ShopInfoMainActivity::class.java))
-                }
-
         tv_no_code.setOnClickListener {
             et_code.setText("13PI")
             getInViteInfo()
@@ -56,9 +47,17 @@ class InviteCodeActivity : BaseActivity() {
 
         RxView.clicks(tv_next).throttleFirst(3, TimeUnit.SECONDS)
                 .subscribe {
+                    if(hasInviteCode == 1 && !TextUtils.isEmpty(et_code.text)){
+                       bindInvCode()
+                    }else{
+                        toast("请输入邀请码！")
+                    }
 
-                    startActivity(Intent(this@InviteCodeActivity, ShopInfoMainActivity.class)
                 }
+
+        iv_close_small.setOnClickListener {
+            et_code.setText("")
+        }
     }
 
     private fun getInViteInfo() {
@@ -72,6 +71,7 @@ class InviteCodeActivity : BaseActivity() {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                         { result ->
+                            hasInviteCode = result.code
                             if (result.code == 1) {
                                 var inviteInfo: InviteInfoBean = Gson().fromJson(result.data.toString(), InviteInfoBean::class.java)
                                 ll_invite.visibility = View.VISIBLE
@@ -79,6 +79,27 @@ class InviteCodeActivity : BaseActivity() {
                                 tv_name.text = inviteInfo.nickName
                                 GlideApp.with(this@InviteCodeActivity).load(inviteInfo.headUrl).into(iv_head)
                             }
+                        }, { error ->
+                            Log.d(Constants.TAG, error.toString())
+                        }
+                )
+    }
+
+    private fun bindInvCode(){
+        var param = HashMap<String, String>()
+        param.put("action", Constants.SHOPACCOUNTBINDINVNO)
+        param.put("accountId", getIntent().getParcelableExtra<InCodeBean>("data")?.accountId.toString())
+        param.put("invNo", et_code.text.toString())
+
+        RetrofitManager.service.baseRequest(param)
+                .subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(
+                        { result ->
+                            var intent = Intent(this@InviteCodeActivity, ShopInfoMainActivity::class.java);
+                            intent.putExtra("data", getIntent().getParcelableExtra<InCodeBean>("data"))
+                            startActivity(intent)
                         }, { error ->
                     Log.d(Constants.TAG, error.toString())
                 }

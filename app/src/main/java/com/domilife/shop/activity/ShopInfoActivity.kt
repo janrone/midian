@@ -9,12 +9,6 @@ import kotlinx.android.synthetic.main.activity_shop_info.*
 
 class ShopInfoActivity : BaseActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        initView()
-        initData()
-
-    }
 
     override fun layoutId(): Int {
         return R.layout.activity_shop_info
@@ -27,11 +21,23 @@ class ShopInfoActivity : BaseActivity() {
             startActivity(Intent(this, MapControlActivity::class.java))
         }
 
+        ll_2.setOnClickListener {
+            startActivityForResult(Intent(this, ShopCategoryActivity::class.java),1)
+        }
+
     }
 
 
     override fun initData() {
 
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(requestCode == 1){
+            tv_kind.setText(data?.getStringExtra("kind"))
+            et_ser.setText(data?.getStringExtra("serRate"))
+        }
     }
 
 

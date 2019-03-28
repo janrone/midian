@@ -32,13 +32,10 @@ import java.util.regex.Pattern
 class LoginActivity : BaseActivity() {
 
     private var mLoginType = 0
-    var mLoadingDialog: LoadingDialog? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         SMSSDK.registerEventHandler(eh)
-        initView()
-        initData()
     }
 
     val eh: EventHandler = object : EventHandler() {
@@ -121,7 +118,7 @@ class LoginActivity : BaseActivity() {
     }
 
     override fun initData() {
-        mLoadingDialog = LoadingDialog(this)
+        //mLoadingDialog = LoadingDialog(this)
     }
 
     private fun timer(getCode: TextView) {
@@ -175,10 +172,6 @@ class LoginActivity : BaseActivity() {
         return text
     }
 
-
-    private fun toast(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
-    }
 
     private fun goLogin() {
         val mobile = et_phone.checkBlank("手机号不能为空") ?: return
