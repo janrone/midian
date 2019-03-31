@@ -1,7 +1,10 @@
 package com.domilife.shop.activity
 
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
+import com.domilife.shop.Constants
 import com.domilife.shop.MainActivity
 import com.domilife.shop.R
 import com.domilife.shop.base.BaseActivity
@@ -54,13 +57,5 @@ class ShopInfoMainActivity : BaseActivity() {
                 }
 
     }
-
-
-
-
-    //private var mLoginType = 0
-    //var mLoadingDialog: LoadingDialog? = null
-
-
 
  }

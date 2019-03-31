@@ -1,5 +1,6 @@
 package com.domilife.shop.activity
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
@@ -96,7 +97,7 @@ class ShopCategoryActivity : BaseActivity() {
             var intent = Intent()
             intent.putExtra("kind", item.name)
             intent.putExtra("serRate", item.servRate)
-            setResult(1,intent)
+            setResult(Activity.RESULT_OK, intent)
             finish()
         }
 
@@ -155,7 +156,7 @@ class ShopCategoryActivity : BaseActivity() {
                     .unsubscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe({ result ->
-mLoadingDialog!!.hide()
+                        mLoadingDialog!!.hide()
                         if (result.code == 1) {
 
                             Log.d(Constants.TAG, "set data")

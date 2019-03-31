@@ -80,8 +80,8 @@
 
 
                         <ImageView
+                            android:id="@+id/iv_shop_f"
                             android:background="@mipmap/ic_cam_bg"
-                            android:scaleType="centerCrop"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
 
@@ -104,6 +104,7 @@
 
 
                         <ImageView
+                            android:id="@+id/iv_shop_b"
                             android:background="@mipmap/ic_cam_bg"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
@@ -166,12 +167,14 @@
 
 
                         <ImageView
+                            android:id="@+id/iv_yyzz"
                             android:background="@mipmap/ic_cam_bg"
                             android:scaleType="centerCrop"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
 
                         <TextView
+                            android:visibility="invisible"
                             android:layout_marginTop="8dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -235,13 +238,12 @@
                     <EditText
                         android:layout_toRightOf="@+id/tv_reg_code"
                         android:layout_marginLeft="15dp"
-                        android:id="@+id/et_phone"
+                        android:id="@+id/et_reg_no"
                         android:layout_width="match_parent"
                         android:textColorHint="#9b9b9b"
                         android:layout_height="wrap_content"
                         android:background="@null"
                         android:hint="必填，社会统一信用代码或注册号"
-                        android:inputType="number"
                         android:paddingTop="8dp"
                         android:paddingBottom="8dp"
                         android:textCursorDrawable="@null"
@@ -294,6 +296,7 @@
 
 
                         <ImageView
+                            android:id="@+id/iv_card_f"
                             android:background="@mipmap/ic_cam_bg"
                             android:scaleType="centerCrop"
                             android:layout_width="match_parent"
@@ -318,6 +321,7 @@
 
 
                         <ImageView
+                            android:id="@+id/iv_card_b"
                             android:background="@mipmap/ic_cam_bg"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
@@ -368,7 +372,6 @@
                         android:layout_height="wrap_content"
                         android:background="@null"
                         android:hint="必填，请输入"
-                        android:inputType="number"
                         android:paddingTop="8dp"
                         android:paddingBottom="8dp"
                         android:textCursorDrawable="@null"
@@ -402,7 +405,6 @@
                         android:layout_height="wrap_content"
                         android:background="@null"
                         android:hint="必填，请输入"
-                        android:inputType="number"
                         android:paddingTop="8dp"
                         android:paddingBottom="8dp"
                         android:textCursorDrawable="@null"
@@ -485,7 +487,6 @@
                         android:textCursorDrawable="@null"
                         android:textSize="12sp" />
 
-
                     <ImageView
                         android:id="@+id/iv_a1"
                         android:layout_centerVertical="true"
@@ -499,11 +500,13 @@
 
 
             <TextView
+                android:id="@+id/tv_save"
+                android:layout_marginBottom="40dp"
                 style="@style/dmBtn"
                 android:layout_width="match_parent"
                 android:layout_height="49dp"
-                android:background="@drawable/shape_btn_submit"
-                android:text="提交"
+                android:background="@drawable/shape_btn_login"
+                android:text="保存"
                 android:textColor="@color/color_white"
                 android:textSize="20sp" />
 

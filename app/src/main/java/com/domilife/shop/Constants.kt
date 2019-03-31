@@ -27,5 +27,8 @@ class Constants private constructor() {
         var SHOPACCOUNTBYINVNO:String = "shopaccountbyinvno"
         var SHOPACCOUNTBINDINVNO:String = "shopaccountbindinvno"
         var SHOPCATEGORY:String = "shopcategory"
+
+        var POSTSHOPINFO:String = "postshopinfo"
+        var POSTSHOPQUALITY:String = "postshopquality"
     }
 }

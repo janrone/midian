@@ -8,4 +8,8 @@ import com.google.gson.JsonObject
  */
 data class BaseResponse(val code: Int,
                         val msg: String,
-                        var data: JsonObject)
+                        var data: JsonObject){
+    override fun toString(): String {
+        return super.toString()
+    }
+}

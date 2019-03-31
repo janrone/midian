@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical">
@@ -76,6 +77,7 @@
             android:textSize="16sp" />
 
         <EditText
+            android:id="@+id/et_detail"
             android:textSize="14sp"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/tv_detail"
@@ -115,6 +117,7 @@
             android:textSize="16sp" />
 
         <EditText
+            android:id="@+id/et_near"
             android:textSize="14sp"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/tv_add"

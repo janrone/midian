@@ -17,6 +17,7 @@ import com.domilife.shop.R
 import com.domilife.shop.base.BaseActivity
 import com.domilife.shop.bean.InCodeBean
 import com.domilife.shop.net.RetrofitManager
+import com.domilife.shop.utils.Preference
 import com.domilife.shop.utils.StatusBarUtil
 import com.domilife.shop.view.LoadingDialog
 import com.google.gson.Gson
@@ -213,13 +214,14 @@ class LoginActivity : BaseActivity() {
                             var mock = "{\"code\":1,\"data\":{\"accountId\":1000984,\"isBindInvNo\":0,\"isCompQuality\":0,\"isCompShopMsg\":0,\"isShopPassed\":0},\"msg\":\"\"}"
                             var inCodeBean: InCodeBean = Gson().fromJson(mock,InCodeBean::class.java)
                             //var inCodeBean:InCodeBean= Gson().fromJson(result.data.toString(),InCodeBean::class.java)
+                            var accountId by Preference("accountId","")
+                            accountId = inCodeBean.accountId.toString()
                             if(inCodeBean.isBindInvNo== 1){
                                 if(inCodeBean.isCompQuality !=1 || inCodeBean.isCompShopMsg != 1){
                                     var intent= Intent(this, ShopInfoMainActivity::class.java)
                                     intent.putExtra("data", inCodeBean)
                                     startActivity(intent)
                                 }
-
                             }else{
                                 var intent= Intent(this, InviteCodeActivity::class.java)
                                 intent.putExtra("data", inCodeBean)

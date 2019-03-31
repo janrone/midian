@@ -1,12 +1,15 @@
 package com.domilife.shop.activity;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -72,7 +75,7 @@ import io.reactivex.schedulers.Schedulers;
 /**
  * 演示地图缩放，旋转，视角控制，单击，双击，长按，截图的事件响应
  */
-public class MapControlActivity extends BaseActivity {
+public class MapControlActivity extends BaseActivity implements OnGetGeoCoderResultListener {
 
     /**
      * MapView 是地图主控件
@@ -151,10 +154,12 @@ public class MapControlActivity extends BaseActivity {
         mLocationClient.start();
 
         coder = GeoCoder.newInstance();
+        coder.setOnGetGeoCodeResultListener(this);
+
         initListener();
 
-        initView();
-        initData();
+
+
     }
 
     /**
@@ -177,51 +182,13 @@ public class MapControlActivity extends BaseActivity {
             public void onMapClick(LatLng point) {
                 touchType = "单击地图";
                 currentPt = point;
+                mCurrentLat = point.latitude;
+                mCurrentLon = point.longitude;
 
                 updateMapState();
                 //mapMoveCenter(point);
+                coder.reverseGeoCode(new ReverseGeoCodeOption().location(point).radius(500));
 
-                GeoCoder geoCoder = GeoCoder.newInstance();
-
-                // 设置地址或经纬度反编译后的监听,这里有两个回调方法
-                geoCoder.setOnGetGeoCodeResultListener(new OnGetGeoCoderResultListener() {
-
-                    @Override
-                    public void onGetReverseGeoCodeResult(ReverseGeoCodeResult result) {
-                        Log.d(Constants.Companion.getTAG(),"我的位置信息为：："
-                                + result.getAddress());
-                    }
-
-                    @Override
-                    public void onGetGeoCodeResult(GeoCodeResult result) {
-                        // 详细地址转换在经纬度
-                        Log.d(Constants.Companion.getTAG(),"我的位置信息为：："
-                                + result.getAddress());
-
-                    }
-                });
-
-                geoCoder.reverseGeoCode(new ReverseGeoCodeOption().location(point));
-
-
-//                ReverseGeoCodeOption op = new ReverseGeoCodeOption();
-//                op.location(point);
-//                final GeoCoder geoCoder = GeoCoder.newInstance();
-//                geoCoder.reverseGeoCode(op);
-//
-//                geoCoder.setOnGetGeoCodeResultListener(new OnGetGeoCoderResultListener() {
-//                    @Override
-//                    public void onGetGeoCodeResult(GeoCodeResult geoCodeResult) {
-//
-//                    }
-//
-//                    @Override
-//                    public void onGetReverseGeoCodeResult(ReverseGeoCodeResult reverseGeoCodeResult) {
-////reverseGeoCodeResult.getAddress()
-//                        Log.d(Constants.Companion.getTAG(),"我的位置信息为：："
-//                                + reverseGeoCodeResult.getAddress());
-//                    }
-//                });
             }
 
             /**
@@ -392,6 +359,25 @@ public class MapControlActivity extends BaseActivity {
 
     }
 
+    @Override
+    public void onGetGeoCodeResult(GeoCodeResult geoCodeResult) {
+        Log.d(Constants.Companion.getTAG(),"我的位置信息为：："
+                + geoCodeResult.getAddress());
+    }
+
+    @Override
+    public void onGetReverseGeoCodeResult(ReverseGeoCodeResult reverseGeoCodeResult) {
+
+        Log.d(Constants.Companion.getTAG(),"我的位置信息为：："
+                + reverseGeoCodeResult.getAddress());
+
+        String tx = reverseGeoCodeResult.getAddressDetail().province +" "
+                + reverseGeoCodeResult.getAddressDetail().city  +" "
+                + reverseGeoCodeResult.getAddressDetail().district ;
+        TextView tvProvince = findViewById(R.id.tv_province);
+        tvProvince.setText(tx);
+    }
+
 
     public class MyLocationListener extends BDAbstractLocationListener {
         @Override
@@ -411,6 +397,8 @@ public class MapControlActivity extends BaseActivity {
                     .longitude(location.getLongitude()).build();
             mBaiduMap.setMyLocationData(locData);
             if (isFirstLoc) {
+                mCurrentLat = location.getLatitude();
+                mCurrentLon = location.getLongitude();
                 isFirstLoc = false;
                 LatLng ll = new LatLng(location.getLatitude(),
                         location.getLongitude());
@@ -489,6 +477,26 @@ public class MapControlActivity extends BaseActivity {
 
     @Override
     public void initView() {
+        findViewById(R.id.tv_right).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TextView tvAdd = findViewById(R.id.tv_province);
+                EditText etDetail = findViewById(R.id.et_detail);
+                EditText etNear = findViewById(R.id.et_near);
+                if(TextUtils.isEmpty(tvAdd.getText())|| TextUtils.isEmpty(etDetail.getText())) {
+                   toast(MapControlActivity.this, "请输入地址");
+                   return;
+                }
+                Intent intent = new Intent();
+                intent.putExtra("add", etDetail.getText().toString());
+                intent.putExtra("city", tvAdd.getText().toString());
+                intent.putExtra("nearBy", etNear.getText().toString());
+                intent.putExtra("lon", mCurrentLon +"");
+                intent.putExtra("lat", mCurrentLat+"");
+                setResult(Activity.RESULT_OK,intent);
+                finish();
+            }
+        });
 
     }
 
@@ -509,6 +517,10 @@ public class MapControlActivity extends BaseActivity {
                 setProvince();
             }
         });
+
+
+
+
     }
 
     private void setProvince(){

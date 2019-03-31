@@ -48,7 +48,8 @@ object RetrofitManager{
             val originalRequest = chain.request()
             val requestBuilder = originalRequest.newBuilder()
                     // Provide your custom header here
-                    .header("token", token)
+                    //.header("token", token)
+                    .header("Connection", "close")
                     .method(originalRequest.method(), originalRequest.body())
             val request = requestBuilder.build()
             chain.proceed(request)
@@ -92,6 +93,7 @@ object RetrofitManager{
                 .baseUrl("https://shiziquan.com/shiziquan/")  //自己配置
                 .client(getOkHttpClient())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .addConverterFactory(NullOnEmptyConverterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
 
@@ -111,7 +113,7 @@ object RetrofitManager{
                 .addInterceptor(addQueryParameterInterceptor())  //参数添加
                 .addInterceptor(addHeaderInterceptor()) // token过滤
 //              .addInterceptor(addCacheInterceptor())
-                .addInterceptor(httpLoggingInterceptor) //日志,所有的请求响应度看到
+               // .addInterceptor(httpLoggingInterceptor) //日志,所有的请求响应度看到
                 .cache(cache)  //添加缓存
                 .connectTimeout(60L, TimeUnit.SECONDS)
                 .readTimeout(60L, TimeUnit.SECONDS)
