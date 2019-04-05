@@ -31,7 +31,7 @@ class InviteCodeActivity : BaseActivity() {
     }
 
     override fun initView() {
-        toolbar.setNavigationOnClickListener { finish() }
+        toolbar?.setNavigationOnClickListener { finish() }
         tv_no_code.paint.flags = Paint.UNDERLINE_TEXT_FLAG //下划线
 
 

@@ -40,4 +40,9 @@ abstract class BaseActivity : AppCompatActivity(){
         finish()
     }
 
+    public fun startActivity(intent: Intent?, isfinish:Boolean) {
+        super.startActivity(intent)
+        if(isfinish)finish()
+    }
+
 }

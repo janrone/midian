@@ -218,6 +218,11 @@
             android:src="@mipmap/ic_arrow" />
 
     </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#F4F5F9"
+        app:layout_constraintTop_toBottomOf="@+id/ll1" />
 
     <RelativeLayout
         android:id="@+id/ll_shop_info"

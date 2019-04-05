@@ -9,7 +9,6 @@ import com.domilife.shop.base.BaseFragment
 import com.domilife.shop.bean.InCodeBean
 import com.domilife.shop.utils.Preference
 import com.google.gson.Gson
-import com.jakewharton.rxbinding2.view.RxView
 import kotlinx.android.synthetic.main.fragment_home.*
 
 /**
@@ -51,7 +50,7 @@ class HomeFragment : BaseFragment() {
         ll_product.setOnClickListener {
 
             if(canNext())
-                startActivity(Intent(activity, ProductActivity::class.java))
+                startActivity(Intent(activity, ProductShelfActivity::class.java))
         }
 
         ll_member.setOnClickListener {

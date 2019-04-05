@@ -61,7 +61,7 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".activity.ProductActivity"
+            android:name=".activity.ProductShelfActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait" >
         </activity>
@@ -72,6 +72,18 @@
         </activity>
         <activity
             android:name=".activity.YingXiaoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <activity
+            android:name=".activity.ProductActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <activity
+            android:name=".activity.DmWebActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait" >
         </activity>

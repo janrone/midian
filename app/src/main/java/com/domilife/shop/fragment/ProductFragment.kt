@@ -6,22 +6,22 @@ import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import com.domilife.shop.R
-import com.domilife.shop.adapter.ZhangbenAdapter
+import com.domilife.shop.adapter.CommonAdapter
 import com.domilife.shop.base.BaseFragment
-import kotlinx.android.synthetic.main.fragment_zben.*
+import kotlinx.android.synthetic.main.fragment_syj.*
 
 /**
  * Created by janrone on 2019/3/16.
  */
-class ZbenFragment : BaseFragment() , SwipeRefreshLayout.OnRefreshListener {
+class ProductFragment : BaseFragment(), SwipeRefreshLayout.OnRefreshListener {
 
     private var mTitle: String? = null
     private var mList: ArrayList<String>? = null
-    var zhangbenAdapter: ZhangbenAdapter? = null
+    var mCommonAdapter: CommonAdapter? = null
 
     companion object {
-        fun getInstance(title: String): ZbenFragment {
-            val fragment = ZbenFragment()
+        fun getInstance(title: String): ProductFragment {
+            val fragment = ProductFragment()
             val bundle = Bundle()
             fragment.arguments = bundle
             fragment.mTitle = title
@@ -30,12 +30,13 @@ class ZbenFragment : BaseFragment() , SwipeRefreshLayout.OnRefreshListener {
     }
 
     override fun getLayoutId(): Int {
-        return R.layout.fragment_zben
+        return R.layout.fragment_product
     }
 
 
     override fun initView() {
         //下拉刷新颜色
+        srl.isEnabled = false
         srl.setColorSchemeColors(Color.parseColor("#F1AA0E"))
         srl.setOnRefreshListener(this)
         list.layoutManager = LinearLayoutManager(activity)
@@ -44,7 +45,7 @@ class ZbenFragment : BaseFragment() , SwipeRefreshLayout.OnRefreshListener {
             var lastVisibleItem: Int? = 0
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 super.onScrollStateChanged(recyclerView!!, newState)
-                if (newState == RecyclerView.SCROLL_STATE_IDLE && lastVisibleItem!! + 1 == zhangbenAdapter?.itemCount) {
+                if (newState == RecyclerView.SCROLL_STATE_IDLE && lastVisibleItem!! + 1 == mCommonAdapter?.itemCount) {
                     //addData()
                 }
             }
@@ -56,13 +57,13 @@ class ZbenFragment : BaseFragment() , SwipeRefreshLayout.OnRefreshListener {
                 lastVisibleItem = layoutManager.findLastVisibleItemPosition()
             }
         })
-        zhangbenAdapter = ZhangbenAdapter(activity, mList)
-        list.adapter = zhangbenAdapter
+        mCommonAdapter = CommonAdapter(activity, mList)
+        list.adapter = mCommonAdapter
     }
 
     override fun onRefresh() {
         //关闭下拉刷新进度条
-        srl.isRefreshing = false
+        srl.isRefreshing = true
         addData()
     }
 
@@ -74,5 +75,6 @@ class ZbenFragment : BaseFragment() , SwipeRefreshLayout.OnRefreshListener {
 
         list.adapter?.notifyDataSetChanged()
     }
+
 
 }

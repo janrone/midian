@@ -38,7 +38,7 @@ public class XYMarkerView extends MarkerView {
             tvContent.setText(Utils.formatNumber(ce.getHigh(), 0, true));
         } else {
 
-            tvContent.setText(Utils.formatNumber(e.getY(), 0, true));
+            tvContent.setText("金额："+Utils.formatNumber(e.getY(), 0, true)+"元");
         }
 
         super.refreshContent(e, highlight);

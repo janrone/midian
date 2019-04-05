@@ -22,6 +22,7 @@ class JingyingFenxiActivity : BaseActivity() {
     }
 
     override fun initView() {
+        toolbar?.setNavigationOnClickListener { finish() }
         setTab()
         setItem()
     }
@@ -49,10 +50,10 @@ class JingyingFenxiActivity : BaseActivity() {
     private fun setTab() {
         val tab1: JingYingFragment =
                 JingYingFragment()
-        val tab2: HomeFragment =
-                HomeFragment()
-        val tab3: HomeFragment =
-                HomeFragment()
+        val tab2: JingYingFragment =
+                JingYingFragment()
+        val tab3: JingYingFragment =
+                JingYingFragment()
         var list = listOf<Fragment>(tab1, tab2, tab3)
 
         viewpager?.adapter = TitleFragmentPagesAdapter(list, supportFragmentManager)
