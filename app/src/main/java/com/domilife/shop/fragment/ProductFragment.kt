@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import com.domilife.shop.R
 import com.domilife.shop.adapter.CommonAdapter
+import com.domilife.shop.adapter.ProductAdapter
 import com.domilife.shop.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_syj.*
 
@@ -17,7 +18,7 @@ class ProductFragment : BaseFragment(), SwipeRefreshLayout.OnRefreshListener {
 
     private var mTitle: String? = null
     private var mList: ArrayList<String>? = null
-    var mCommonAdapter: CommonAdapter? = null
+    var mCommonAdapter: ProductAdapter? = null
 
     companion object {
         fun getInstance(title: String): ProductFragment {
@@ -57,8 +58,10 @@ class ProductFragment : BaseFragment(), SwipeRefreshLayout.OnRefreshListener {
                 lastVisibleItem = layoutManager.findLastVisibleItemPosition()
             }
         })
-        mCommonAdapter = CommonAdapter(activity, mList)
+        mCommonAdapter = ProductAdapter(activity, mList)
         list.adapter = mCommonAdapter
+
+        addData()
     }
 
     override fun onRefresh() {

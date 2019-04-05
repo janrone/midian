@@ -19,14 +19,14 @@ class ProductAdapter(context: Context?, list: ArrayList<String>?) : RecyclerView
 
         p0?.tvTitle?.text = title
 
-        p0.item?.setOnClickListener {
-            var context = mContext as MainActivity
-            context.startActivity(Intent(mContext, DmWebActivity::class.java),false)
-        }
+//        p0.item?.setOnClickListener {
+//            var context = mContext as MainActivity
+//            context.startActivity(Intent(mContext, DmWebActivity::class.java),false)
+//        }
     }
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): CommonHolder {
-        return CommonHolder(mInflater?.inflate(R.layout.item_syj_layout, p0, false))
+        return CommonHolder(mInflater?.inflate(R.layout.item_product_layout, p0, false))
     }
 
 
@@ -45,7 +45,6 @@ class ProductAdapter(context: Context?, list: ArrayList<String>?) : RecyclerView
     }
 
     class CommonHolder(itemView: View?) : RecyclerView.ViewHolder(itemView!!) {
-        var tvTitle: TextView = itemView?.findViewById<TextView>(R.id.tv_title) as TextView
-        var item = itemView?.findViewById<LinearLayout>(R.id.ll_item)
+        var tvTitle = itemView?.findViewById<TextView>(R.id.iv_name)
     }
 }

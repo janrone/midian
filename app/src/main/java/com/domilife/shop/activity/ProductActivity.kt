@@ -45,10 +45,8 @@ class ProductActivity : BaseActivity() {
 
     //设置Tab
     private fun setTab() {
-        val tab1: ProductFragment =
-                ProductFragment()
-        val tab2: ProductFragment =
-                ProductFragment()
+        val tab1 = ProductFragment()
+        val tab2 = ProductFragment()
         var list = listOf<Fragment>(tab1, tab2)
 
         viewpager?.adapter = TitleFragmentPagesAdapter(list, supportFragmentManager)
