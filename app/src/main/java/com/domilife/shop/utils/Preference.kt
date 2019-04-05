@@ -34,6 +34,26 @@ class Preference<T>(val name:String, private val default:T) {
         fun clearPreference(key : String){
             prefs.edit().remove(key).apply()
         }
+
+        /**
+         * 查询某个key是否已经存在
+         *
+         * @param key
+         * @return
+         */
+        fun contains(key: String): Boolean {
+            return prefs.contains(key)
+        }
+
+        /**
+         * 返回所有的键值对
+         *
+         * @param context
+         * @return
+         */
+        fun getAll(): Map<String, *> {
+            return prefs.all
+        }
     }
 
 
@@ -122,23 +142,5 @@ class Preference<T>(val name:String, private val default:T) {
     }
 
 
-    /**
-     * 查询某个key是否已经存在
-     *
-     * @param key
-     * @return
-     */
-    fun contains(key: String): Boolean {
-        return prefs.contains(key)
-    }
 
-    /**
-     * 返回所有的键值对
-     *
-     * @param context
-     * @return
-     */
-    fun getAll(): Map<String, *> {
-        return prefs.all
-    }
 }

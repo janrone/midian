@@ -149,6 +149,7 @@
 
 
         <LinearLayout
+            android:id="@+id/ll_product"
             android:layout_width="wrap_content"
             android:layout_height="94dp"
             android:layout_marginRight="4dp"
@@ -172,6 +173,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll_yingxiao"
             android:layout_width="wrap_content"
             android:layout_height="94dp"
             android:layout_weight="1"
@@ -233,6 +235,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll_member"
             android:layout_width="wrap_content"
             android:layout_height="94dp"
             android:layout_weight="1"
@@ -272,6 +275,7 @@
             android:textColor="@color/color_black"
             android:layout_centerHorizontal="true"
             android:id="@+id/tv_bot2"
+            android:visibility="gone"
             android:text="开店资料未提交，点击继续提交"
             android:layout_width="match_parent"
             android:layout_height="40dp" />

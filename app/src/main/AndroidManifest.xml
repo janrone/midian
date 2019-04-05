@@ -35,7 +35,11 @@
         android:supportsRtl="true"
         tools:replace="android:label"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".activity.SplashActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -45,7 +49,6 @@
         <activity
              android:name=".activity.LoginActivity"
             android:screenOrientation="portrait" >
-
         </activity>
         <activity
             android:name=".activity.InviteCodeActivity"
@@ -54,6 +57,21 @@
 
         <activity
             android:name=".activity.ShopInfoMainActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.ProductActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.MemberActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.YingXiaoActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait" >
         </activity>

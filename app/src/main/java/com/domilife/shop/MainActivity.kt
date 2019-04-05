@@ -6,18 +6,25 @@ import com.flyco.tablayout.listener.CustomTabEntity
 import com.flyco.tablayout.listener.OnTabSelectListener
 import com.domilife.shop.R
 import com.domilife.shop.base.BaseActivity
+import com.domilife.shop.bean.InCodeBean
 import com.domilife.shop.bean.TabEntity
 import com.domilife.shop.fragment.HomeFragment
 import com.domilife.shop.fragment.MineFragment
 import com.domilife.shop.fragment.SyijingFragment
 import com.domilife.shop.fragment.ZbenFragment
+import com.domilife.shop.utils.Preference
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {
+
     override fun initView() {
+
     }
 
     override fun initData() {
+
+        //if(inCodeBean?.isCompQuality == 1) {
+        //if(inCodeBean?.isCompShopMsg == 1) {
 
     }
 
@@ -40,10 +47,10 @@ class MainActivity : BaseActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         if (savedInstanceState != null) {
             mIndex = savedInstanceState.getInt("currTabIndex")
         }
-        super.onCreate(savedInstanceState)
         initTab()
         tab_layout.currentTab =mIndex
         switchFragment(mIndex)

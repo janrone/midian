@@ -191,9 +191,14 @@ class ShopInfoAptitudeActivity : BaseActivity() {
                    .subscribe(
                            { result ->
                                mLoadingDialog?.hide()
+                               if(result.code == 1){
+                                   toast("保存成功")
+                                    finish()
+                               }
                                Log.d(Constants.TAG, "fun doUpload() result"+result.toString())
                            }, { error ->
                        mLoadingDialog?.hide()
+                       toast("保存成功，请重试")
                        Log.d(Constants.TAG, error.toString())
                        Log.d(Constants.TAG, "fun doUpload() error"+error.toString())
                    }

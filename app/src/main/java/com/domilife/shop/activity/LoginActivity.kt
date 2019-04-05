@@ -210,12 +210,18 @@ class LoginActivity : BaseActivity() {
                     .subscribe({ result ->
                         mLoadingDialog?.hide()
                         Log.d(Constants.TAG, result.toString())
-                        if(result.code ==0){
-                            var mock = "{\"code\":1,\"data\":{\"accountId\":1000984,\"isBindInvNo\":0,\"isCompQuality\":0,\"isCompShopMsg\":0,\"isShopPassed\":0},\"msg\":\"\"}"
-                            var inCodeBean: InCodeBean = Gson().fromJson(mock,InCodeBean::class.java)
-                            //var inCodeBean:InCodeBean= Gson().fromJson(result.data.toString(),InCodeBean::class.java)
+                        if(result.code ==1){
+                            //var mock = "{\"code\":1,\"data\":{\"accountId\":1000984,\"isBindInvNo\":0,\"isCompQuality\":0,\"isCompShopMsg\":0,\"isShopPassed\":0},\"msg\":\"\"}"
+                            //var inCodeBean: InCodeBean = Gson().fromJson(mock,InCodeBean::class.java)
+                            var inCodeBean:InCodeBean= Gson().fromJson(result.data.toString(),InCodeBean::class.java)
+
                             var accountId by Preference("accountId","")
                             accountId = inCodeBean.accountId.toString()
+
+                            var incodebean by Preference("incodebean", "")
+                            incodebean = result.data.toString()
+                            //  var save : LoginSaveBean by Preference<LoginSaveBean>(App.getInstance(),Constant.LOCAL_SAVE_LOGIN_MODEL_KEY, LoginSaveBean("0","0"))
+
                             if(inCodeBean.isBindInvNo== 1){
                                 if(inCodeBean.isCompQuality !=1 || inCodeBean.isCompShopMsg != 1){
                                     var intent= Intent(this, ShopInfoMainActivity::class.java)

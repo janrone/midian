@@ -10,6 +10,7 @@ import android.widget.TableLayout
 import com.domilife.shop.R
 import com.domilife.shop.base.BaseActivity
 import com.domilife.shop.fragment.HomeFragment
+import com.domilife.shop.fragment.JingYingFragment
 import kotlinx.android.synthetic.main.activity_jingyingfenxi.*
 
 
@@ -46,8 +47,8 @@ class JingyingFenxiActivity : BaseActivity() {
 
     //设置Tab
     private fun setTab() {
-        val tab1: HomeFragment =
-                HomeFragment()
+        val tab1: JingYingFragment =
+                JingYingFragment()
         val tab2: HomeFragment =
                 HomeFragment()
         val tab3: HomeFragment =

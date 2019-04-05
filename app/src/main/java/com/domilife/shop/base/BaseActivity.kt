@@ -1,6 +1,7 @@
 package com.domilife.shop.base
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
@@ -33,5 +34,10 @@ abstract class BaseActivity : AppCompatActivity(){
 
     fun Context.toast(message:CharSequence)= Toast.makeText(this,message, Toast.LENGTH_LONG).show()
 
+
+    override fun startActivity(intent: Intent?) {
+        super.startActivity(intent)
+        finish()
+    }
 
 }
