@@ -6,9 +6,12 @@ import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentStatePagerAdapter
 import com.domilife.shop.R
 import com.domilife.shop.base.BaseActivity
-import com.domilife.shop.fragment.JingYingFragment
 import com.domilife.shop.fragment.ProductFragment
 import kotlinx.android.synthetic.main.activity_product.*
+import com.umeng.socialize.UMShareAPI
+import android.content.Intent
+
+
 
 class ProductActivity : BaseActivity() {
 
@@ -70,6 +73,11 @@ class ProductActivity : BaseActivity() {
 
         override fun getCount() = fmList.size
 
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data)
     }
 
 

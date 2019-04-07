@@ -82,6 +82,7 @@
 
 
             <TextView
+                android:id="@+id/iv_share"
                 android:drawablePadding="6dp"
                 android:gravity="center"
                 android:drawableTop="@mipmap/ic_product_share"

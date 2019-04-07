@@ -1,14 +1,27 @@
 package com.domilife.shop.fragment
 
+import android.Manifest
+import android.app.Activity
+import android.content.pm.PackageManager
 import android.graphics.Color
 import android.os.Bundle
+import android.support.v4.app.ActivityCompat
+import android.support.v4.content.ContextCompat
 import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import com.domilife.shop.R
+import com.domilife.shop.activity.ProductActivity
 import com.domilife.shop.adapter.CommonAdapter
 import com.domilife.shop.adapter.ProductAdapter
 import com.domilife.shop.base.BaseFragment
+import com.umeng.socialize.ShareAction
+import com.umeng.socialize.UMShareListener
+import com.umeng.socialize.bean.SHARE_MEDIA
+import com.umeng.socialize.media.UMImage
+import com.umeng.socialize.media.UMWeb
+import com.umeng.socialize.shareboard.SnsPlatform
+import com.umeng.socialize.utils.ShareBoardlistener
 import kotlinx.android.synthetic.main.fragment_syj.*
 
 /**
@@ -19,6 +32,8 @@ class ProductFragment : BaseFragment(), SwipeRefreshLayout.OnRefreshListener {
     private var mTitle: String? = null
     private var mList: ArrayList<String>? = null
     var mCommonAdapter: ProductAdapter? = null
+
+    private var mShareAction: ShareAction? = null
 
     companion object {
         fun getInstance(title: String): ProductFragment {
@@ -59,6 +74,11 @@ class ProductFragment : BaseFragment(), SwipeRefreshLayout.OnRefreshListener {
             }
         })
         mCommonAdapter = ProductAdapter(activity, mList)
+        mCommonAdapter?.setShareListener(object :ProductAdapter.ShareListener{
+            override fun share() {
+                initShare()
+            }
+        })
         list.adapter = mCommonAdapter
 
         addData()
@@ -79,5 +99,64 @@ class ProductFragment : BaseFragment(), SwipeRefreshLayout.OnRefreshListener {
         list.adapter?.notifyDataSetChanged()
     }
 
+
+    private fun initShare(){
+        //获得权限
+        if (ContextCompat.checkSelfPermission(activity!!.applicationContext, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            //没有的话弹出权限获取框
+            ActivityCompat.requestPermissions(activity!!, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), 1)
+        }
+
+        //配置分享面板
+        mShareAction = ShareAction(activity)
+                .withText("你好，世界")
+                .setDisplayList(
+                        //传入展示列表
+                        SHARE_MEDIA.QQ,//QQ
+                        SHARE_MEDIA.QZONE,//QQ
+                        SHARE_MEDIA.WEIXIN, //微信
+                        SHARE_MEDIA.WEIXIN_CIRCLE//微信朋友圈
+                        //SHARE_MEDIA.WEIXIN_FAVORITE//微信收藏
+                ).setShareboardclickCallback(object : ShareBoardlistener {
+                    override fun onclick(snsPlatform: SnsPlatform?, share_media: SHARE_MEDIA?) {
+                        val web = UMWeb("https://www.jianshu.com/u/8c6b4be8770b")//你要分享的url
+                        web.mText = "tonjies的博客"//分享内容的标题
+                        web.description = "tonjies的博客，会每周分享一些开发知识"//分享内容的描述
+                        web.setThumb(UMImage(activity, R.drawable.smssdk_corners_bg))//分享内容的缩略图
+                        ShareAction(activity)
+                                .withMedia(web)
+                                .setPlatform(share_media)//设置分享的平台
+                                .setCallback(shareListener)
+                                .share()
+                    }
+                })
+
+        mShareAction?.open()
+    }
+
+    //分享的回调
+    private val shareListener = object : UMShareListener {
+
+        //开始分享，platform为平台类型
+        override fun onStart(platform: SHARE_MEDIA) {
+            //L.d("开始分享，分享的平台是：$platform");
+        }
+
+        //分享成功
+        override fun onResult(platform: SHARE_MEDIA) {
+            //L.d("分享成功")
+            (activity as ProductActivity).toast("分享成功")
+        }
+
+        //分享失败
+        override fun onError(platform: SHARE_MEDIA, t: Throwable) {
+            (activity as ProductActivity).toast("分享失败,失败的原因是$t")
+        }
+
+        //分享取消了
+        override fun onCancel(platform: SHARE_MEDIA) {
+            (activity as ProductActivity).toast("分享取消了")
+        }
+    }
 
 }

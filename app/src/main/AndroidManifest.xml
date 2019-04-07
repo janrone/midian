@@ -115,6 +115,18 @@
             android:screenOrientation="portrait" >
         </activity>
 
+        <activity
+            android:name=".activity.EditPwdActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="71ec20xG62Gosj00MaHBefulB7g1Nnj9" />

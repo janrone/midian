@@ -3,7 +3,7 @@ package com.domilife.shop.activity
 import com.domilife.shop.R
 import com.domilife.shop.base.BaseActivity
 
-class TempActivity : BaseActivity() {
+class OrderDetailActivity : BaseActivity() {
 
 
     override fun layoutId(): Int {
