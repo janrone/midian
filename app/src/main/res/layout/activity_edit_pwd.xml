@@ -156,7 +156,6 @@
             android:layout_height="wrap_content"
             android:background="@null"
             android:hint="请输入新密码"
-            android:inputType="number"
             android:paddingTop="8dp"
             android:paddingBottom="8dp"
             android:textCursorDrawable="@null"

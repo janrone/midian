@@ -14,14 +14,14 @@ class LoadingDialog(context: Context) : Dialog(context, R.style.CustomProgressDi
 
     init {
         setContentView(R.layout.loading_dialog)
-        imgIv = findViewById(R.id.imgIv) as ImageView
+        imgIv = findViewById(R.id.imgIv)
     }
 
     @SuppressLint("ObjectAnimatorBinding")
     private fun initAnim() {
         val animator = ObjectAnimator.ofFloat(imgIv, "rotation", 0f, 359f)
         animator.repeatCount = ValueAnimator.INFINITE
-        animator.repeatMode = ValueAnimator.REVERSE
+        animator.repeatMode = ValueAnimator.RESTART
         animator.duration = 2000
         animator.start()
     }

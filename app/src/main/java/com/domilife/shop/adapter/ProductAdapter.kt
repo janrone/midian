@@ -1,4 +1,4 @@
-package com.domilife.shop.adapter;
+package com.domilife.shop.adapter
 
 import android.Manifest
 import android.app.Activity
@@ -25,17 +25,19 @@ import com.umeng.socialize.shareboard.SnsPlatform
 import com.umeng.socialize.utils.ShareBoardlistener
 
 
-class ProductAdapter(context: Context?, list: ArrayList<String>?) : RecyclerView.Adapter<ProductAdapter.CommonHolder>() {
+open class ProductAdapter(context: Context?, list: ArrayList<String>?, type:String?) : RecyclerView.Adapter<ProductAdapter.CommonHolder>() {
 
-    var mContext: Context? = null
+    open var mContext: Context? = null
     private var mList: ArrayList<String>? = null
     private var mInflater: LayoutInflater? = null
+    open var mType: String? = null
 
     private var mShareListener: ShareListener?=null
 
     init {
         mContext = context
         mList = list
+        mType = type
         mInflater = LayoutInflater.from(context)
     }
 
@@ -48,12 +50,32 @@ class ProductAdapter(context: Context?, list: ArrayList<String>?) : RecyclerView
 //            var context = mContext as MainActivity
 //            context.startActivity(Intent(mContext, DmWebActivity::class.java),false)
 //        }
-        p0.tvShare?.setOnClickListener {
-            mShareListener?.share()
+
+        with(p0){
+            tvShare?.setOnClickListener {mShareListener?.onClick(it) }
+            tvEdit?.setOnClickListener {mShareListener?.onClick(it) }
+            tvDown?.setOnClickListener {mShareListener?.onClick(it) }
+            llItem?.setOnClickListener {mShareListener?.onClick(it) }
+            tvDel?.setOnClickListener {mShareListener?.onClick(it) }
+            tvUp?.setOnClickListener {mShareListener?.onClick(it) }
+
+            when(mType){
+                "已下架" ->{
+                    llDel?.visibility = View.VISIBLE
+                    llUp?.visibility = View.VISIBLE
+                }
+                else ->{
+                    llDel?.visibility = View.GONE
+                    llUp?.visibility = View.GONE
+                }
+            }
         }
     }
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): CommonHolder {
+        when (mType) {
+            "已下架" -> return CommonHolder(mInflater?.inflate(R.layout.item_product_down_layout, p0, false))
+        }
         return CommonHolder(mInflater?.inflate(R.layout.item_product_layout, p0, false))
     }
 
@@ -61,21 +83,24 @@ class ProductAdapter(context: Context?, list: ArrayList<String>?) : RecyclerView
         return mList?.size ?: 0
     }
 
-    class CommonHolder(itemView: View?) : RecyclerView.ViewHolder(itemView!!) {
+    inner class CommonHolder(itemView: View?) : RecyclerView.ViewHolder(itemView!!) {
         var tvTitle = itemView?.findViewById<TextView>(R.id.iv_name)
         var tvShare = itemView?.findViewById<TextView>(R.id.iv_share)
+        var tvEdit = itemView?.findViewById<TextView>(R.id.tv_edit)
+        var tvDown = itemView?.findViewById<TextView>(R.id.tv_down)
+        var llItem = itemView?.findViewById<LinearLayout>(R.id.ll_item)
+        var tvDel = itemView?.findViewById<TextView>(R.id.tv_del)
+        var tvUp = itemView?.findViewById<TextView>(R.id.tv_up)
+        var llUp = itemView?.findViewById<LinearLayout>(R.id.ll_up)
+        var llDel = itemView?.findViewById<LinearLayout>(R.id.ll_del)
     }
 
-    fun setShareListener(shareListener:ShareListener){
+    fun setOnClickListener(shareListener:ShareListener){
         mShareListener = shareListener
     }
 
-    fun setShareListener() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
     interface ShareListener{
-        fun share()
+        fun onClick(v: View)
     }
 
 }

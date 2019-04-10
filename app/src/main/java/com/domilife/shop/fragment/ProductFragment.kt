@@ -2,6 +2,7 @@ package com.domilife.shop.fragment
 
 import android.Manifest
 import android.app.Activity
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Color
 import android.os.Bundle
@@ -10,9 +11,10 @@ import android.support.v4.content.ContextCompat
 import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.view.View
 import com.domilife.shop.R
+import com.domilife.shop.activity.EditProductActivity
 import com.domilife.shop.activity.ProductActivity
-import com.domilife.shop.adapter.CommonAdapter
 import com.domilife.shop.adapter.ProductAdapter
 import com.domilife.shop.base.BaseFragment
 import com.umeng.socialize.ShareAction
@@ -73,10 +75,21 @@ class ProductFragment : BaseFragment(), SwipeRefreshLayout.OnRefreshListener {
                 lastVisibleItem = layoutManager.findLastVisibleItemPosition()
             }
         })
-        mCommonAdapter = ProductAdapter(activity, mList)
-        mCommonAdapter?.setShareListener(object :ProductAdapter.ShareListener{
-            override fun share() {
-                initShare()
+
+        mCommonAdapter = ProductAdapter(activity, mList, mTitle)
+
+        mCommonAdapter?.setOnClickListener(object :ProductAdapter.ShareListener{
+            override fun onClick(v: View) {
+                when(v.id){
+                    R.id.iv_share -> initShare()
+                    R.id.tv_edit -> initShare()
+                    R.id.tv_down -> initShare()
+                    R.id.tv_up -> {}
+                    R.id.tv_del -> {}
+                    R.id.ll_item -> {
+                        startActivity(Intent(activity, EditProductActivity::class.java))
+                    }
+                }
             }
         })
         list.adapter = mCommonAdapter
@@ -109,7 +122,7 @@ class ProductFragment : BaseFragment(), SwipeRefreshLayout.OnRefreshListener {
 
         //配置分享面板
         mShareAction = ShareAction(activity)
-                .withText("你好，世界")
+                .withText("分享")
                 .setDisplayList(
                         //传入展示列表
                         SHARE_MEDIA.QQ,//QQ

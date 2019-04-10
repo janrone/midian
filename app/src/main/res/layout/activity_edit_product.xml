@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/color_title_bg"
+        app:navigationIcon="@mipmap/ic_back">
+
+        <TextView
+            android:id="@+id/tv_header_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:text="编辑商品"
+            android:textColor="@color/color_white"
+            android:textSize="18sp" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp">
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="27dp"
+                    android:gravity="center_vertical"
+                    android:text="商品名称"
+                    android:textColor="#4A4A4A"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@+id/tv_lim"
+                    android:layout_toRightOf="@+id/tv_name"
+                    android:background="@null"
+                    android:gravity="center_vertical|right"
+                    android:hint="请输入商品名称"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_lim"
+                    android:layout_width="wrap_content"
+                    android:layout_height="27dp"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center_vertical"
+                    android:text="0/30"
+                    android:textColor="#9B9B9B"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#F1F1F1" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp">
+
+                <TextView
+                    android:id="@+id/tv_pic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="27dp"
+                    android:gravity="center_vertical"
+                    android:text="商品图"
+                    android:textColor="#4A4A4A"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="27dp"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center_vertical"
+                    android:text=" 0/6 "
+                    android:textColor="#9B9B9B"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@mipmap/ic_pro_bg" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:background="#F1F1F1" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp">
+
+                <TextView
+                    android:id="@+id/tv_price_s"
+                    android:layout_width="wrap_content"
+                    android:layout_height="27dp"
+                    android:gravity="center_vertical"
+                    android:text="优惠价格"
+                    android:textColor="#4A4A4A"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@+id/tv_y1"
+                    android:layout_toRightOf="@+id/tv_price_s"
+                    android:background="@null"
+                    android:gravity="center_vertical|right"
+                    android:hint="请输入优惠后金额"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_y1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="27dp"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center_vertical"
+                    android:text="元"
+                    android:textColor="#4A4A4A"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#F1F1F1" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp">
+
+                <TextView
+                    android:id="@+id/tv_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="27dp"
+                    android:gravity="center_vertical"
+                    android:text="原价"
+                    android:textColor="#4A4A4A"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@+id/tv_y"
+                    android:layout_toRightOf="@+id/tv_price"
+                    android:background="@null"
+                    android:gravity="center_vertical|right"
+                    android:hint="请输入商品的原价"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_y"
+                    android:layout_width="wrap_content"
+                    android:layout_height="27dp"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center_vertical"
+                    android:text="元"
+                    android:textColor="#4A4A4A"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#F1F1F1" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp">
+
+                <TextView
+                    android:id="@+id/tv_kc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="27dp"
+                    android:gravity="center_vertical"
+                    android:text="库存"
+                    android:textColor="#4A4A4A"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@+id/tv_f"
+                    android:layout_toRightOf="@+id/tv_kc"
+                    android:background="@null"
+                    android:gravity="center_vertical|right"
+                    android:hint="请输入每人限购份数，不输入则不限份数"
+                    android:inputType="number"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_f"
+                    android:layout_width="wrap_content"
+                    android:layout_height="27dp"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center_vertical"
+                    android:text="份"
+                    android:textColor="#4A4A4A"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#F1F1F1" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp">
+
+                <TextView
+                    android:id="@+id/tv_yxq"
+                    android:layout_width="wrap_content"
+                    android:layout_height="27dp"
+                    android:gravity="center_vertical"
+                    android:text="商品购买后存"
+                    android:textColor="#4A4A4A"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@+id/tv_arrow"
+                    android:layout_toRightOf="@+id/tv_yxq"
+                    android:background="@null"
+                    android:enabled="false"
+                    android:gravity="center_vertical|right"
+                    android:hint="请选择"
+                    android:inputType="number"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:id="@+id/tv_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="27dp"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center_vertical"
+                    android:src="@mipmap/ic_arrow"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#F1F1F1" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp">
+
+                <TextView
+                    android:id="@+id/tv_fs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="27dp"
+                    android:gravity="center_vertical"
+                    android:text="收货方式"
+                    android:textColor="#4A4A4A"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@+id/tv_arrow1"
+                    android:layout_toRightOf="@+id/tv_fs"
+                    android:background="@null"
+                    android:enabled="false"
+                    android:gravity="center_vertical|right"
+                    android:hint="请选择"
+                    android:inputType="number"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:id="@+id/tv_arrow1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="27dp"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center_vertical"
+                    android:src="@mipmap/ic_arrow"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#F1F1F1" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp">
+
+                <TextView
+                    android:id="@+id/tv_tgf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="27dp"
+                    android:gravity="center_vertical"
+                    android:text="推广费"
+                    android:textColor="#4A4A4A"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@+id/tv_y3"
+                    android:layout_toRightOf="@+id/tv_tgf"
+                    android:background="@null"
+                    android:gravity="center_vertical|right"
+                    android:hint="请输入商品的推广费价"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_y3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="27dp"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center_vertical"
+                    android:text="元"
+                    android:textColor="#4A4A4A"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#F1F1F1" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp">
+
+                <TextView
+                    android:id="@+id/tv_spms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="27dp"
+                    android:gravity="center_vertical"
+                    android:text="商品描述（必填）"
+                    android:textColor="#4A4A4A"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@null"
+                    android:gravity="top|left"
+                    android:hint="请输入商品描述、介绍。200字以内"
+                    android:padding="8dp"
+                    android:textSize="12sp" />
+
+
+                <TextView
+                    android:id="@+id/tv_lim3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="27dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="center_vertical"
+                    android:text="0/200"
+                    android:textColor="#9B9B9B"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp">
+
+                <TextView
+                    android:id="@+id/tv_yf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="27dp"
+                    android:gravity="center_vertical"
+                    android:text="邮费（选填）"
+                    android:textColor="#4A4A4A"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@+id/tv_y6"
+                    android:layout_toRightOf="@+id/tv_yf"
+                    android:background="@null"
+                    android:gravity="center_vertical|right"
+                    android:hint="默认包邮，自提包邮"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_y6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="27dp"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center_vertical"
+                    android:text="元"
+                    android:textColor="#4A4A4A"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#F1F1F1" />
+
+
+            <Button
+                android:id="@+id/tv_notice"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/shape_btn_notice"
+                android:gravity="center"
+                android:text="发 布"
+                android:textColor="@color/color_white"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

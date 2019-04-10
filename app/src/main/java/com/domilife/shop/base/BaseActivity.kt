@@ -45,4 +45,14 @@ abstract class BaseActivity : AppCompatActivity(){
         if(isfinish)finish()
     }
 
+    override fun onPause() {
+        super.onPause()
+        mLoadingDialog?.dismiss()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mLoadingDialog?.dismiss()
+    }
+
 }

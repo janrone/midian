@@ -30,5 +30,7 @@ class Constants private constructor() {
 
         var POSTSHOPINFO:String = "postshopinfo"
         var POSTSHOPQUALITY:String = "postshopquality"
+
+        var SHOPSETPASSWORD:String = "shopsetpassword"
     }
 }
