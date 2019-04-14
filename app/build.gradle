@@ -86,4 +86,6 @@ dependencies {
     implementation 'com.jhworks.library:ImageSelect:1.1.1'
     implementation 'id.zelory:compressor:2.1.0'
     implementation files('libs/umeng-share-sina-simplify-6.9.4.jar')
+    implementation'pub.devrel:easypermissions:1.2.0'
+    implementation 'com.log1992:library:1.0.2'
 }

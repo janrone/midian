@@ -24,6 +24,8 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <!-- 这个权限用于访问GPS定位 -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA"/>
 
 
     <application
@@ -129,6 +131,35 @@
 
         <activity
             android:name=".activity.OrderDetailActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".activity.OrderActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <activity
+            android:name=".activity.ExpressActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <activity
+            android:name=".activity.QRCodeActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <activity
+            android:name=".activity.ScanActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <activity
+            android:name=".activity.HuodongActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait" >
         </activity>

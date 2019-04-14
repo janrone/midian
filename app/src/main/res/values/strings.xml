@@ -8,4 +8,6 @@
     <string name="title_jyfx">经营分析</string>
     <string name="title_reg">注册</string>
     <string name="title_product">商品</string>
+    <string name="title_order">订单</string>
+    <string name="tips_scan_code">将二维码放入框内，即可自动扫描\n 或从相册选取二维码</string>
 </resources>

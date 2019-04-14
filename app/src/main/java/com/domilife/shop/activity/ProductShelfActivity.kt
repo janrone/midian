@@ -20,6 +20,14 @@ class ProductShelfActivity : BaseActivity() {
         rl_product.setOnClickListener {
             startActivity(Intent(this@ProductShelfActivity, ProductActivity::class.java))
         }
+
+        ll_shop_info.setOnClickListener {
+            startActivity(Intent(this@ProductShelfActivity, OrderActivity::class.java))
+        }
+
+        rl_share.setOnClickListener {
+
+        }
     }
 
 

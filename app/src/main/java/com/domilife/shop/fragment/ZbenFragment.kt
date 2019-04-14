@@ -21,7 +21,7 @@ class ZbenFragment : BaseFragment() , SwipeRefreshLayout.OnRefreshListener {
 
     companion object {
         fun getInstance(title: String): ZbenFragment {
-            val fragment = ZbenFragment()
+            val fragment = com.domilife.shop.fragment.ZbenFragment()
             val bundle = Bundle()
             fragment.arguments = bundle
             fragment.mTitle = title
@@ -58,6 +58,7 @@ class ZbenFragment : BaseFragment() , SwipeRefreshLayout.OnRefreshListener {
         })
         zhangbenAdapter = ZhangbenAdapter(activity, mList)
         list.adapter = zhangbenAdapter
+        addData()
     }
 
     override fun onRefresh() {

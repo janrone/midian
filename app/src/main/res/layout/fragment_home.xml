@@ -40,6 +40,7 @@
 
 
         <LinearLayout
+            android:id="@+id/ll_sk"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -61,6 +62,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll_scan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -76,12 +78,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
-                android:text="收款"
+                android:text="扫码核销"
                 android:textColor="@color/color_white"
                 android:textSize="14sp" />
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll_order"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -97,7 +100,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
-                android:text="收款"
+                android:text="订单管理"
                 android:textColor="@color/color_white"
                 android:textSize="14sp" />
         </LinearLayout>

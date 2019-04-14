@@ -21,7 +21,7 @@ class SyijingFragment : BaseFragment(), SwipeRefreshLayout.OnRefreshListener {
 
     companion object {
         fun getInstance(title: String): SyijingFragment {
-            val fragment = SyijingFragment()
+            val fragment = com.domilife.shop.fragment.SyijingFragment()
             val bundle = Bundle()
             fragment.arguments = bundle
             fragment.mTitle = title
@@ -58,6 +58,7 @@ class SyijingFragment : BaseFragment(), SwipeRefreshLayout.OnRefreshListener {
         })
         mCommonAdapter = CommonAdapter(activity, mList)
         list.adapter = mCommonAdapter
+        addData()
     }
 
     override fun onRefresh() {

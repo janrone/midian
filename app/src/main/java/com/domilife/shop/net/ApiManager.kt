@@ -23,7 +23,11 @@ interface ApiManager {
     //shopsmslogin?phone={phone}&smsCode={smsCode}
     @GET("learn")
     fun shopsmslogin(@Query("action") action:String ,
-            @Query("phone") phone:String, @Query("smsCode") smsCode: String): Observable<BaseResponse>
+            @Query("phone") phone:String, @Query("smsCode") smsCode: String): Observable<BaseResponse> //shopsmslogin?phone={phone}&smsCode={smsCode}
+
+    @GET("learn")
+    fun shoppwdlogin(@Query("action") action:String ,
+            @Query("phone") phone:String, @Query("pwd") pwd: String): Observable<BaseResponse>
 
     //bae
     @GET("learn")

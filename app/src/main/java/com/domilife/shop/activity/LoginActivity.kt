@@ -196,7 +196,7 @@ class LoginActivity : BaseActivity() {
         }
         val pwd = et_pwd.checkBlank("密码不能为空") ?: return
 
-        //shopsmslogin(mobile,pwd)
+        shoppwdlogin(mobile,pwd)
 
     }
 
@@ -233,6 +233,63 @@ class LoginActivity : BaseActivity() {
                                 intent.putExtra("data", inCodeBean)
                                 startActivity(intent)
                             }
+                        }else{
+                            toast(result.msg)
+                        }
+                    }, { error ->
+                        mLoadingDialog?.hide()
+                        toast(error.toString())
+                        Log.d(Constants.TAG, error.toString())
+                    }
+//                            , {
+//                        Log.d(Constants.TAG, "onComplete")
+//                    }, {
+//                        Log.d(Constants.TAG, "onStart")
+//                    }
+                    )
+        } catch (e: Exception) {
+            mLoadingDialog?.hide()
+            Log.d(Constants.TAG, e.toString())
+        } finally {
+            //mLoadingDialog?.hide()
+        }
+
+    }
+    private fun shoppwdlogin(phone: String, code: String) {
+        try {
+            mLoadingDialog?.show()
+            RetrofitManager.service.shoppwdlogin("shoppwdlogin", phone, code)
+                    .subscribeOn(Schedulers.io())
+                    .unsubscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe({ result ->
+                        mLoadingDialog?.hide()
+                        Log.d(Constants.TAG, result.toString())
+                        if(result.code ==1){
+                            //var mock = "{\"code\":1,\"data\":{\"accountId\":1000984,\"isBindInvNo\":0,\"isCompQuality\":0,\"isCompShopMsg\":0,\"isShopPassed\":0},\"msg\":\"\"}"
+                            //var inCodeBean: InCodeBean = Gson().fromJson(mock,InCodeBean::class.java)
+                            var inCodeBean:InCodeBean= Gson().fromJson(result.data.toString(),InCodeBean::class.java)
+
+                            var accountId by Preference("accountId","")
+                            accountId = inCodeBean.accountId.toString()
+
+                            var incodebean by Preference("incodebean", "")
+                            incodebean = result.data.toString()
+                            //  var save : LoginSaveBean by Preference<LoginSaveBean>(App.getInstance(),Constant.LOCAL_SAVE_LOGIN_MODEL_KEY, LoginSaveBean("0","0"))
+
+                            if(inCodeBean.isBindInvNo== 1){
+                                if(inCodeBean.isCompQuality !=1 || inCodeBean.isCompShopMsg != 1){
+                                    var intent= Intent(this, ShopInfoMainActivity::class.java)
+                                    intent.putExtra("data", inCodeBean)
+                                    startActivity(intent)
+                                }
+                            }else{
+                                var intent= Intent(this, InviteCodeActivity::class.java)
+                                intent.putExtra("data", inCodeBean)
+                                startActivity(intent)
+                            }
+                        }else{
+                            toast(result.msg)
                         }
                     }, { error ->
                         mLoadingDialog?.hide()

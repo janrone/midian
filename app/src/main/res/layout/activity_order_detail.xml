@@ -26,303 +26,317 @@
 
     </android.support.v7.widget.Toolbar>
 
-    <RelativeLayout
-        android:padding="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+ <com.domilife.shop.view.RecyclerScrollView
+     android:background="@color/color_white"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent">
 
-        <TextView
-            android:layout_centerVertical="true"
-            android:textColor="#28354C"
-            android:textSize="18sp"
-            android:text="待发货"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+     <LinearLayout
+         android:background="@color/color_white"
+         android:orientation="vertical"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent">
+         <RelativeLayout
+             android:padding="20dp"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_centerVertical="true"
-            android:background="@drawable/shape_btn_notice"
-            android:layout_alignParentRight="true"
-            android:textColor="@color/color_white"
-            android:textSize="14sp"
-            android:text="填写发货单"
-            android:gravity="center"
-            android:layout_width="90dp"
-            android:layout_height="33dp" />
-    </RelativeLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:background="#9B9B9B" />
+             <TextView
+                 android:layout_centerVertical="true"
+                 android:textColor="#28354C"
+                 android:textSize="18sp"
+                 android:text="待发货"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content" />
 
-    <LinearLayout
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:paddingTop="15dp"
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
+             <TextView
+                 android:id="@+id/tv_express"
+                 android:layout_centerVertical="true"
+                 android:background="@drawable/shape_btn_notice"
+                 android:layout_alignParentRight="true"
+                 android:textColor="@color/color_white"
+                 android:textSize="14sp"
+                 android:text="填写发货单"
+                 android:gravity="center"
+                 android:layout_width="90dp"
+                 android:layout_height="33dp" />
+         </RelativeLayout>
+         <View
+             android:layout_width="match_parent"
+             android:layout_height="1dp"
+             android:layout_marginLeft="15dp"
+             android:layout_marginRight="15dp"
+             android:background="#9B9B9B" />
 
-        <TextView
-            android:textColor="#67696C"
-            android:textSize="14sp"
-            android:text="收货人"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content" />
+         <LinearLayout
+             android:paddingLeft="15dp"
+             android:paddingRight="15dp"
+             android:paddingTop="15dp"
+             android:layout_width="match_parent"
+             android:orientation="horizontal"
+             android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_marginLeft="15dp"
-            android:textColor="#28354C"
-            android:text="xxx"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-    <LinearLayout
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:paddingTop="15dp"
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
+             <TextView
+                 android:textColor="#67696C"
+                 android:textSize="14sp"
+                 android:text="收货人"
+                 android:layout_width="60dp"
+                 android:layout_height="wrap_content" />
 
-        <TextView
-            android:textColor="#67696C"
-            android:textSize="14sp"
-            android:text="付款次数"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content" />
+             <TextView
+                 android:layout_marginLeft="15dp"
+                 android:textColor="#28354C"
+                 android:text="xxx"
+                 android:layout_width="60dp"
+                 android:layout_height="wrap_content" />
+         </LinearLayout>
+         <LinearLayout
+             android:paddingLeft="15dp"
+             android:paddingRight="15dp"
+             android:paddingTop="15dp"
+             android:layout_width="match_parent"
+             android:orientation="horizontal"
+             android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_marginLeft="15dp"
-            android:textColor="#28354C"
-            android:text="付款次数"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-    <LinearLayout
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:paddingTop="15dp"
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
+             <TextView
+                 android:textColor="#67696C"
+                 android:textSize="14sp"
+                 android:text="付款次数"
+                 android:layout_width="60dp"
+                 android:layout_height="wrap_content" />
 
-        <TextView
-            android:textColor="#67696C"
-            android:textSize="14sp"
-            android:text="收货地址"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content" />
+             <TextView
+                 android:layout_marginLeft="15dp"
+                 android:textColor="#28354C"
+                 android:text="付款次数"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content" />
+         </LinearLayout>
+         <LinearLayout
+             android:paddingLeft="15dp"
+             android:paddingRight="15dp"
+             android:paddingTop="15dp"
+             android:layout_width="match_parent"
+             android:orientation="horizontal"
+             android:layout_height="wrap_content">
+
+             <TextView
+                 android:textColor="#67696C"
+                 android:textSize="14sp"
+                 android:text="收货地址"
+                 android:layout_width="60dp"
+                 android:layout_height="wrap_content" />
 
 
-        <TextView
-            android:layout_marginLeft="15dp"
-            android:textColor="#28354C"
-            android:text="xxx"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content" />
+             <TextView
+                 android:layout_marginLeft="15dp"
+                 android:textColor="#28354C"
+                 android:text="xxx"
+                 android:layout_width="60dp"
+                 android:layout_height="wrap_content" />
 
-    </LinearLayout>
-    <LinearLayout
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:paddingTop="15dp"
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
+         </LinearLayout>
+         <LinearLayout
+             android:paddingLeft="15dp"
+             android:paddingRight="15dp"
+             android:paddingTop="15dp"
+             android:layout_width="match_parent"
+             android:orientation="horizontal"
+             android:layout_height="wrap_content">
 
-        <TextView
-            android:textColor="#67696C"
-            android:textSize="14sp"
-            android:text="收货人"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content" />
+             <TextView
+                 android:textColor="#67696C"
+                 android:textSize="14sp"
+                 android:text="收货人"
+                 android:layout_width="60dp"
+                 android:layout_height="wrap_content" />
 
-        <TextView
-            android:layout_marginLeft="15dp"
-            android:textColor="#2691DE"
-            android:text="18766661000"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+             <TextView
+                 android:layout_marginLeft="15dp"
+                 android:textColor="#2691DE"
+                 android:text="18766661000"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content" />
 
-    </LinearLayout>
-    <LinearLayout
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:paddingTop="15dp"
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
+         </LinearLayout>
+         <LinearLayout
+             android:paddingLeft="15dp"
+             android:paddingRight="15dp"
+             android:paddingTop="15dp"
+             android:layout_width="match_parent"
+             android:orientation="horizontal"
+             android:layout_height="wrap_content">
 
-        <TextView
-            android:textColor="#67696C"
-            android:textSize="14sp"
-            android:text="买家留言"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content" />
+             <TextView
+                 android:textColor="#67696C"
+                 android:textSize="14sp"
+                 android:text="买家留言"
+                 android:layout_width="60dp"
+                 android:layout_height="wrap_content" />
 
-        <TextView
-            android:layout_marginLeft="15dp"
-            android:textColor="#28354C"
-            android:text="XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+             <TextView
+                 android:layout_marginLeft="15dp"
+                 android:textColor="#28354C"
+                 android:text="XXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXX"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content" />
+         </LinearLayout>
 
-    <View
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:background="#9B9B9B" />
-    <LinearLayout
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:paddingTop="15dp"
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
+         <View
+             android:layout_marginTop="20dp"
+             android:layout_width="match_parent"
+             android:layout_height="1dp"
+             android:layout_marginLeft="15dp"
+             android:layout_marginRight="15dp"
+             android:background="#9B9B9B" />
+         <LinearLayout
+             android:paddingLeft="15dp"
+             android:paddingRight="15dp"
+             android:paddingTop="15dp"
+             android:layout_width="match_parent"
+             android:orientation="horizontal"
+             android:layout_height="wrap_content">
 
-        <TextView
-            android:textColor="#67696C"
-            android:textSize="14sp"
-            android:text="收款总额"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content" />
+             <TextView
+                 android:textColor="#67696C"
+                 android:textSize="14sp"
+                 android:text="收款总额"
+                 android:layout_width="60dp"
+                 android:layout_height="wrap_content" />
 
-        <TextView
-            android:layout_marginLeft="15dp"
-            android:textColor="#28354C"
-            android:text="xxx"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-    <LinearLayout
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:paddingTop="15dp"
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
+             <TextView
+                 android:layout_marginLeft="15dp"
+                 android:textColor="#28354C"
+                 android:text="xxx"
+                 android:layout_width="60dp"
+                 android:layout_height="wrap_content" />
+         </LinearLayout>
+         <LinearLayout
+             android:paddingLeft="15dp"
+             android:paddingRight="15dp"
+             android:paddingTop="15dp"
+             android:layout_width="match_parent"
+             android:orientation="horizontal"
+             android:layout_height="wrap_content">
 
-        <TextView
-            android:textColor="#67696C"
-            android:textSize="14sp"
-            android:text="商品总价"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content" />
+             <TextView
+                 android:textColor="#67696C"
+                 android:textSize="14sp"
+                 android:text="商品总价"
+                 android:layout_width="60dp"
+                 android:layout_height="wrap_content" />
 
-        <TextView
-            android:layout_marginLeft="15dp"
-            android:textColor="#28354C"
-            android:text="付款次数"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-    <LinearLayout
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:paddingTop="15dp"
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
+             <TextView
+                 android:layout_marginLeft="15dp"
+                 android:textColor="#28354C"
+                 android:text="付款次数"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content" />
+         </LinearLayout>
+         <LinearLayout
+             android:paddingLeft="15dp"
+             android:paddingRight="15dp"
+             android:paddingTop="15dp"
+             android:layout_width="match_parent"
+             android:orientation="horizontal"
+             android:layout_height="wrap_content">
 
-        <TextView
-            android:textColor="#67696C"
-            android:textSize="14sp"
-            android:text="运费"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content" />
+             <TextView
+                 android:textColor="#67696C"
+                 android:textSize="14sp"
+                 android:text="运费"
+                 android:layout_width="60dp"
+                 android:layout_height="wrap_content" />
 
 
-        <TextView
-            android:layout_marginLeft="15dp"
-            android:textColor="#28354C"
-            android:text="xxx"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content" />
+             <TextView
+                 android:layout_marginLeft="15dp"
+                 android:textColor="#28354C"
+                 android:text="xxx"
+                 android:layout_width="60dp"
+                 android:layout_height="wrap_content" />
 
-    </LinearLayout>
-    <LinearLayout
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:paddingTop="15dp"
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
+         </LinearLayout>
+         <LinearLayout
+             android:paddingLeft="15dp"
+             android:paddingRight="15dp"
+             android:paddingTop="15dp"
+             android:layout_width="match_parent"
+             android:orientation="horizontal"
+             android:layout_height="wrap_content">
 
-        <TextView
-            android:textColor="#67696C"
-            android:textSize="14sp"
-            android:text="购买总数"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content" />
+             <TextView
+                 android:textColor="#67696C"
+                 android:textSize="14sp"
+                 android:text="购买总数"
+                 android:layout_width="60dp"
+                 android:layout_height="wrap_content" />
 
-        <TextView
-            android:layout_marginLeft="15dp"
-            android:textColor="#28354C"
-            android:text="18766661000"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+             <TextView
+                 android:layout_marginLeft="15dp"
+                 android:textColor="#28354C"
+                 android:text="18766661000"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content" />
 
-    </LinearLayout>
-    <LinearLayout
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:paddingTop="15dp"
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
+         </LinearLayout>
+         <LinearLayout
+             android:paddingLeft="15dp"
+             android:paddingRight="15dp"
+             android:paddingTop="15dp"
+             android:layout_width="match_parent"
+             android:orientation="horizontal"
+             android:layout_height="wrap_content">
 
-        <TextView
-            android:textColor="#67696C"
-            android:textSize="14sp"
-            android:text="订单号"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content" />
+             <TextView
+                 android:textColor="#67696C"
+                 android:textSize="14sp"
+                 android:text="订单号"
+                 android:layout_width="60dp"
+                 android:layout_height="wrap_content" />
 
-        <TextView
-            android:layout_marginLeft="15dp"
-            android:textColor="#28354C"
-            android:text="XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+             <TextView
+                 android:layout_marginLeft="15dp"
+                 android:textColor="#28354C"
+                 android:text="XXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXX"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-    <LinearLayout
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:paddingTop="15dp"
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content" />
+         </LinearLayout>
+         <LinearLayout
+             android:paddingLeft="15dp"
+             android:paddingRight="15dp"
+             android:paddingTop="15dp"
+             android:layout_width="match_parent"
+             android:orientation="horizontal"
+             android:layout_height="wrap_content">
 
-        <TextView
-            android:textColor="#67696C"
-            android:textSize="14sp"
-            android:text="创建时间"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content" />
+             <TextView
+                 android:textColor="#67696C"
+                 android:textSize="14sp"
+                 android:text="创建时间"
+                 android:layout_width="60dp"
+                 android:layout_height="wrap_content" />
 
-        <TextView
-            android:layout_marginLeft="15dp"
-            android:textColor="#28354C"
-            android:text="XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+             <TextView
+                 android:layout_marginLeft="15dp"
+                 android:textColor="#28354C"
+                 android:text="XXXXXXXXXXXXXXXXXXXXXXXXXXXX
 XXXXXXXXXXX"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content" />
+         </LinearLayout>
 
-    <View
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:background="#9B9B9B" />
+         <android.support.v7.widget.RecyclerView
+             android:id="@+id/rv_list"
+             android:background="@color/color_white"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content">
+
+         </android.support.v7.widget.RecyclerView>
+     </LinearLayout>
+ </com.domilife.shop.view.RecyclerScrollView>
+
 
 </LinearLayout>

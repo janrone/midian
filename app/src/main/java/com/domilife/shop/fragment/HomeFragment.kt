@@ -23,7 +23,7 @@ class HomeFragment : BaseFragment() {
 
     companion object {
         fun getInstance(title: String): HomeFragment {
-            val fragment = HomeFragment()
+            val fragment = com.domilife.shop.fragment.HomeFragment()
             val bundle = Bundle()
             fragment.arguments = bundle
             fragment.mTitle = title
@@ -63,6 +63,24 @@ class HomeFragment : BaseFragment() {
 
             if(canNext())
                 startActivity(Intent(activity, YingXiaoActivity::class.java))
+        }
+
+        ll_order.setOnClickListener {
+
+            if(canNext())
+                startActivity(Intent(activity, OrderActivity::class.java))
+        }
+
+        ll_sk.setOnClickListener {
+
+            if(canNext())
+                startActivity(Intent(activity, QRCodeActivity::class.java))
+        }
+
+        ll_scan.setOnClickListener {
+
+            if(canNext())
+                startActivity(Intent(activity, ScanActivity::class.java))
         }
 
         if (Preference.contains("incodebean")) {

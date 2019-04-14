@@ -13,7 +13,7 @@ import com.domilife.shop.R
 import com.domilife.shop.activity.DmWebActivity
 
 
-class CommonAdapter(context: Context?, list: ArrayList<String>?) : RecyclerView.Adapter<CommonAdapter.CommonHolder>() {
+class OrderProductAdapter(context: Context?, list: ArrayList<String>?) : RecyclerView.Adapter<OrderProductAdapter.CommonHolder>() {
     override fun onBindViewHolder(p0: CommonHolder, p1: Int) {
         val title: String? = mList?.get(p1)
 
@@ -26,7 +26,7 @@ class CommonAdapter(context: Context?, list: ArrayList<String>?) : RecyclerView.
     }
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): CommonHolder {
-        return CommonHolder(mInflater?.inflate(R.layout.item_syj_layout, p0, false))
+        return CommonHolder(mInflater?.inflate(R.layout.item_product, p0, false))
     }
 
 
@@ -45,7 +45,7 @@ class CommonAdapter(context: Context?, list: ArrayList<String>?) : RecyclerView.
     }
 
     class CommonHolder(itemView: View?) : RecyclerView.ViewHolder(itemView!!) {
-        var tvTitle = itemView?.findViewById<TextView>(R.id.tv_title)
+        var tvTitle = itemView?.findViewById<TextView>(R.id.tv_name)
         var item = itemView?.findViewById<LinearLayout>(R.id.ll_item)
     }
 }
