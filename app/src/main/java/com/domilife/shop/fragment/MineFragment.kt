@@ -3,6 +3,7 @@ package com.domilife.shop.fragment
 import android.content.Intent
 import android.os.Bundle
 import com.domilife.shop.R
+import com.domilife.shop.activity.ContentActivity
 import com.domilife.shop.activity.EditPwdActivity
 import com.domilife.shop.activity.ShopInfoMainActivity
 import com.domilife.shop.base.BaseFragment
@@ -33,6 +34,10 @@ class MineFragment : BaseFragment() {
 
         rl_pwd.setOnClickListener {
             startActivity(Intent(activity, EditPwdActivity::class.java))
+        }
+
+        rl_kf.setOnClickListener {
+            startActivity(Intent(activity, ContentActivity::class.java))
         }
     }
 }

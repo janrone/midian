@@ -5,6 +5,10 @@ import com.domilife.shop.R
 import com.domilife.shop.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_yingxiao.*
 
+
+/**
+ * Created by janrone on 2019/4/14.
+ */
 class YingXiaoActivity : BaseActivity() {
 
 

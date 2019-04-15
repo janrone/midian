@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import android.view.Gravity
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.Toast
@@ -38,7 +39,17 @@ abstract class BaseActivity : AppCompatActivity() ,EasyPermissions.PermissionCal
 
     abstract fun initData()
 
-    fun Context.toast(message:CharSequence)= Toast.makeText(this,message, Toast.LENGTH_LONG).show()
+    fun Context.toast(message:CharSequence){
+        var toast = Toast.makeText(this,message, Toast.LENGTH_LONG)
+        toast.setGravity(Gravity.CENTER, 0, 0)
+        toast.show()
+    }
+
+//    fun Context.toast(message:CharSequence)= {
+//        var toast = Toast.makeText(this,message, Toast.LENGTH_LONG).setGravity(Gravity.CENTER, 0, 0).show()
+//        toast.setGravity()
+//        toast.show()
+//    }
 
 
     override fun startActivity(intent: Intent?) {
@@ -114,4 +125,13 @@ abstract class BaseActivity : AppCompatActivity() ,EasyPermissions.PermissionCal
                     .show()
         }
     }
+
+
+
+    fun Any.toast(context: Context, duration: Int = Toast.LENGTH_SHORT): Toast {
+        return Toast.makeText(context, this.toString(), duration).apply { show() }
+    }
+
+    //"This is my string".toast(context)
+    //"click on ${position.name}".toast(context)
 }

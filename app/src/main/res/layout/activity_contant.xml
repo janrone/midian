@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/color_title_bg"
+        app:navigationIcon="@mipmap/ic_back">
+
+        <TextView
+            android:id="@+id/tv_header_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:text="联系客服"
+            android:textColor="@color/color_white"
+            android:textSize="18sp" />
+
+    </android.support.v7.widget.Toolbar>
+
+
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:src="@mipmap/ic_launcher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:textColor="@color/color_black"
+        android:text="多米生活"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_v_code"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:textColor="@color/color_4a"
+        android:text="多米生活"
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <ImageView
+        android:id="@+id/iv_save"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_dmsh"
+        android:layout_width="250dp"
+        android:layout_height="250dp" />
+
+    <TextView
+        android:layout_marginTop="6dp"
+        android:layout_gravity="center"
+        android:textColor="@color/color_4a"
+        android:text="多米生活app微信公众账号"
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_save"
+        android:background="@drawable/shape_btn_notice"
+        android:layout_marginTop="6dp"
+        android:padding="8dp"
+        android:layout_gravity="center"
+        android:textColor="@color/color_white"
+        android:text="  保存微信二维码  "
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_kf"
+        android:tag="shiziquanlite"
+        android:background="@drawable/shape_btn_notice"
+        android:layout_marginTop="6dp"
+        android:padding="8dp"
+        android:layout_gravity="center"
+        android:textColor="@color/color_white"
+        android:text="复制专属客服微信"
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_marginTop="12dp"
+        android:layout_gravity="center"
+        android:textColor="@color/color_black"
+        android:text="服务时间：周一至周六 9:00 - 18:00"
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>

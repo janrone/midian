@@ -32,10 +32,7 @@ class SplashActivity : BaseActivity() {
         }
     }
 
-    /**
-     * 6.0以下版本(系统自动申请) 不会弹框
-     * 有些厂商修改了6.0系统申请机制，他们修改成系统自动申请权限了
-     */
+
     private fun checkPermission(){
         val perms = arrayOf(Manifest.permission.READ_PHONE_STATE,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA,
