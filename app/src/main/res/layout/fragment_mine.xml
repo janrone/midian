@@ -130,7 +130,7 @@
 
                     <TextView
                         android:id="@+id/tv_ktx"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="15dp"
@@ -141,13 +141,33 @@
                         android:textColor="#4A4A4A"
                         android:textSize="14sp" />
 
-                    <ImageView
+                    <TextView
+                        android:id="@+id/tv_ktx_no"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_toRightOf="@+id/tv_ktx"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:text="¥11233.00"
+                        android:textColor="#F1AA0E"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_to_tx"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
+                        android:text="提现"
+                        android:background="@drawable/shape_tx_bg"
+                        android:textColor="@color/color_white"
+                        android:textSize="9sp"
                         android:layout_centerVertical="true"
-                        android:padding="8dp"
-                        android:src="@mipmap/ic_arrow" />
+                        android:paddingLeft="8dp"
+                        android:paddingTop="3dp"
+                        android:paddingBottom="3dp"
+                        android:paddingRight="8dp"/>
 
                 </RelativeLayout>
 
@@ -169,15 +189,27 @@
 
                     <TextView
                         android:id="@+id/tv_djs"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="15dp"
                         android:layout_toRightOf="@+id/iv_djs"
                         android:paddingTop="8dp"
                         android:paddingBottom="8dp"
-                        android:text="可提现"
+                        android:text="待结算"
                         android:textColor="#4A4A4A"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_toRightOf="@+id/tv_djs"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:text="¥11233.00"
+                        android:textColor="#F1AA0E"
                         android:textSize="14sp" />
 
                     <ImageView
@@ -186,7 +218,7 @@
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
                         android:padding="8dp"
-                        android:src="@mipmap/ic_arrow" />
+                        android:src="@mipmap/ic_eye_p" />
 
                 </RelativeLayout>
 

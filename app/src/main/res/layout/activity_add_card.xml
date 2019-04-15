@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#F8F8F8"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/color_title_bg"
+        app:navigationIcon="@mipmap/ic_back">
+
+        <TextView
+            android:id="@+id/tv_header_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:text="添加银行卡"
+            android:textColor="@color/color_white"
+            android:textSize="18sp" />
+
+    </android.support.v7.widget.Toolbar>
+
+   <LinearLayout
+       android:background="@color/color_white"
+       android:layout_width="match_parent"
+       android:orientation="vertical"
+       android:layout_height="wrap_content">
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_margin="16dp">
+
+           <TextView
+               android:id="@+id/tv_yxq"
+               android:layout_width="65dp"
+               android:layout_height="27dp"
+               android:gravity="center_vertical"
+               android:text="银行卡"
+               android:textColor="#4A4A4A"
+               android:textSize="14sp" />
+
+           <EditText
+               android:layout_width="match_parent"
+               android:layout_height="27dp"
+               android:layout_marginLeft="15dp"
+               android:layout_marginRight="10dp"
+               android:layout_toLeftOf="@+id/tv_arrow"
+               android:layout_toRightOf="@+id/tv_yxq"
+               android:background="@null"
+               android:enabled="false"
+               android:gravity="center_vertical"
+               android:hint="请选择银行卡"
+               android:inputType="number"
+               android:textSize="12sp" />
+
+           <ImageView
+               android:id="@+id/tv_arrow"
+               android:layout_width="wrap_content"
+               android:layout_height="27dp"
+               android:layout_alignParentRight="true"
+               android:gravity="center_vertical"
+               android:src="@mipmap/ic_arrow"
+               android:textSize="14sp" />
+       </RelativeLayout>
+
+       <View
+           android:layout_width="match_parent"
+           android:layout_height="1dp"
+           android:layout_marginLeft="10dp"
+           android:layout_marginRight="10dp"
+           android:background="#F1F1F1" />
+
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_margin="16dp">
+
+           <TextView
+               android:id="@+id/tv_kh"
+               android:layout_width="65dp"
+               android:layout_height="27dp"
+               android:gravity="center_vertical"
+               android:text="卡号    "
+               android:textColor="#4A4A4A"
+               android:textSize="14sp" />
+
+           <EditText
+               android:layout_width="match_parent"
+               android:layout_height="27dp"
+               android:layout_marginLeft="15dp"
+               android:layout_marginRight="10dp"
+               android:layout_toRightOf="@+id/tv_kh"
+               android:background="@null"
+               android:enabled="false"
+               android:gravity="center_vertical"
+               android:hint="请输入卡号"
+               android:inputType="number"
+               android:textSize="12sp" />
+
+       </RelativeLayout>
+
+       <View
+           android:layout_width="match_parent"
+           android:layout_height="1dp"
+           android:layout_marginLeft="10dp"
+           android:layout_marginRight="10dp"
+           android:background="#F1F1F1" />
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_margin="16dp">
+
+           <TextView
+               android:id="@+id/tv_xm"
+               android:layout_width="65dp"
+               android:layout_height="27dp"
+               android:gravity="center_vertical"
+               android:text="姓名    "
+               android:textColor="#4A4A4A"
+               android:textSize="14sp" />
+
+           <EditText
+               android:layout_width="match_parent"
+               android:layout_height="27dp"
+               android:layout_marginLeft="15dp"
+               android:layout_marginRight="10dp"
+               android:layout_toRightOf="@+id/tv_xm"
+               android:background="@null"
+               android:enabled="false"
+               android:gravity="center_vertical"
+               android:hint="请输入姓名"
+               android:inputType="number"
+               android:textSize="12sp" />
+       </RelativeLayout>
+
+       <View
+           android:layout_width="match_parent"
+           android:layout_height="1dp"
+           android:layout_marginLeft="10dp"
+           android:layout_marginRight="10dp"
+           android:background="#F1F1F1" />
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_margin="16dp">
+
+           <TextView
+               android:id="@+id/tv_sfzh"
+               android:layout_width="65dp"
+               android:layout_height="27dp"
+               android:gravity="center_vertical"
+               android:text="身份证号"
+               android:textColor="#4A4A4A"
+               android:textSize="14sp" />
+
+           <EditText
+               android:layout_width="match_parent"
+               android:layout_height="27dp"
+               android:layout_marginLeft="15dp"
+               android:layout_marginRight="10dp"
+               android:layout_toRightOf="@+id/tv_sfzh"
+               android:background="@null"
+               android:enabled="false"
+               android:gravity="center_vertical"
+               android:hint="请输入卡号"
+               android:inputType="number"
+               android:textSize="12sp" />
+
+       </RelativeLayout>
+
+       <View
+           android:layout_width="match_parent"
+           android:layout_height="1dp"
+           android:layout_marginLeft="10dp"
+           android:layout_marginRight="10dp"
+           android:background="#F1F1F1" />
+
+   </LinearLayout>
+
+  <LinearLayout
+      android:layout_marginTop="10dp"
+      android:background="@color/color_white"
+      android:layout_width="match_parent"
+      android:orientation="vertical"
+      android:layout_height="wrap_content">
+
+      <LinearLayout
+          android:id="@+id/ll1"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          android:paddingLeft="15dp"
+          android:paddingTop="10dp"
+          android:paddingBottom="10dp"
+          app:layout_constraintTop_toBottomOf="@+id/rl1">
+
+          <TextView
+              android:layout_width="65dp"
+              android:layout_height="wrap_content"
+              android:text="账户"
+              android:textColor="#4A4A4A"
+              android:textSize="16sp" />
+
+          <EditText
+              android:layout_marginRight="15dp"
+              android:id="@+id/et_phone"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@null"
+              android:hint="请输入手机号"
+              android:inputType="number"
+              android:paddingTop="8dp"
+              android:paddingBottom="8dp"
+              android:layout_marginLeft="15dp"
+              android:textCursorDrawable="@null"
+              android:textSize="14sp" />
+      </LinearLayout>
+
+      <View
+          android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:layout_marginLeft="15dp"
+          android:layout_marginRight="15dp"
+          android:background="#F4F5F9"
+          app:layout_constraintTop_toBottomOf="@+id/ll1" />
+
+      <LinearLayout
+          android:id="@+id/ll_content"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          app:layout_constraintTop_toBottomOf="@+id/ll1">
+
+
+          <RelativeLayout
+              android:id="@+id/ll2"
+              android:layout_width="match_parent"
+              android:layout_height="50dp"
+              android:orientation="horizontal"
+              android:paddingLeft="15dp"
+              app:layout_constraintTop_toBottomOf="@+id/ll1">
+
+              <TextView
+                  android:id="@+id/tv_code"
+                  android:layout_width="65dp"
+                  android:layout_height="wrap_content"
+                  android:layout_centerVertical="true"
+                  android:inputType="number"
+                  android:text="验证码"
+                  android:textColor="#4A4A4A"
+                  android:textSize="16sp" />
+
+              <EditText
+                  android:layout_marginLeft="15dp"
+                  android:layout_marginRight="15dp"
+                  android:layout_toLeftOf="@+id/tv_get_code"
+                  android:id="@+id/et_code"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_centerVertical="true"
+                  android:layout_toRightOf="@+id/tv_code"
+                  android:background="@null"
+                  android:hint="请输入验证码"
+                  android:inputType="number"
+                  android:paddingTop="8dp"
+                  android:paddingBottom="8dp"
+                  android:textCursorDrawable="@null"
+                  android:textSize="14sp" />
+
+              <TextView
+                  android:id="@+id/tv_get_code"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_alignParentRight="true"
+                  android:layout_centerVertical="true"
+                  android:layout_gravity="center_vertical"
+                  android:layout_marginRight="31dp"
+                  android:background="@drawable/shape_get_code"
+                  android:gravity="center"
+                  android:text="获取验证码"
+                  android:textColor="@color/color_white"
+                  android:textSize="12sp" />
+          </RelativeLayout>
+
+
+      </LinearLayout>
+
+      <View
+          android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:layout_marginLeft="15dp"
+          android:layout_marginTop="5dp"
+          android:layout_marginRight="15dp"
+          android:background="#F4F5F9"
+          app:layout_constraintTop_toBottomOf="@+id/ll_content" />
+
+  </LinearLayout>
+
+    <TextView
+        android:drawableLeft="@mipmap/ic_system_complete"
+        android:drawablePadding="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="#9B9B9B"
+        android:textSize="10sp"
+        android:text="绑定即代表统一《****服务协议》"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:gravity="center"
+        android:background="@drawable/shape_tx_bg"
+        android:id="@+id/tv_add"
+        android:textColor="@color/color_white"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center_horizontal"
+        android:text="确定"
+        android:textSize="18sp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="45dp" />
+
+</LinearLayout>

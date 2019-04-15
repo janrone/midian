@@ -2,12 +2,10 @@ package com.domilife.shop
 
 import android.app.Application
 import android.content.Context
-import android.widget.ImageView
 import com.baidu.mapapi.CoordType
 import com.baidu.mapapi.SDKInitializer
 import com.mob.MobSDK
 import kotlin.properties.Delegates
-import com.bumptech.glide.Glide
 import com.umeng.commonsdk.UMConfigure
 import com.umeng.socialize.PlatformConfig
 
@@ -22,13 +20,6 @@ class DMApplication : Application() {
         private val TAG = "DMApplication"
 
         var context: Context by Delegates.notNull()
-            private set
-
-//        fun getRefWatcher(context: Context): RefWatcher? {
-//            val myApplication = context.applicationContext as MyApplication
-//            return myApplication.refWatcher
-//        }
-
     }
 
     override fun onCreate() {
@@ -50,5 +41,7 @@ class DMApplication : Application() {
         PlatformConfig.setSinaWeibo("3921700954", "04b48b094faeb16683c32669824ebdad","http://sns.whalecloud.com")
 
         PlatformConfig.setQQZone("100424468", "c7394704798a158208a74ab60104f0ba")
+
+        UMConfigure.init(this, UMConfigure.DEVICE_TYPE_PHONE, "")
     }
 }

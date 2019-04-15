@@ -1,11 +1,14 @@
 package com.domilife.shop.fragment
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.view.View
 import com.domilife.shop.R
+import com.domilife.shop.activity.ZDdetailActivity
 import com.domilife.shop.adapter.ZhangbenAdapter
 import com.domilife.shop.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_zben.*
@@ -56,7 +59,14 @@ class ZbenFragment : BaseFragment() , SwipeRefreshLayout.OnRefreshListener {
                 lastVisibleItem = layoutManager.findLastVisibleItemPosition()
             }
         })
+
         zhangbenAdapter = ZhangbenAdapter(activity, mList)
+        zhangbenAdapter?.setOnClickListener( object : ZhangbenAdapter.OnClickListener{
+            override fun onClick(v: View) {
+                startActivity(Intent(activity, ZDdetailActivity::class.java))
+            }
+        } )
+
         list.adapter = zhangbenAdapter
         addData()
     }

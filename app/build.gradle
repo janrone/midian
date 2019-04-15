@@ -88,4 +88,8 @@ dependencies {
     implementation files('libs/umeng-share-sina-simplify-6.9.4.jar')
     implementation'pub.devrel:easypermissions:1.2.0'
     implementation 'com.log1992:library:1.0.2'
+
+    implementation  'com.umeng.umsdk:analytics:8.0.0'
+    implementation  'com.umeng.umsdk:common:2.0.0'
+
 }

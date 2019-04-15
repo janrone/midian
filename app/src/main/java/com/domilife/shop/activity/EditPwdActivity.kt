@@ -25,6 +25,7 @@ import java.util.regex.Pattern
 class EditPwdActivity : BaseActivity() {
 
 
+    var type : Int = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         SMSSDK.registerEventHandler(eh)
@@ -65,6 +66,8 @@ class EditPwdActivity : BaseActivity() {
     }
 
     override fun initData() {
+        type = intent.getIntExtra("type", 0)
+
         tv_get_code.setOnClickListener {
 
             // 请求验证码，其中country表示国家代码，如“86”；phone表示手机号码，如“13800138000”
@@ -92,7 +95,10 @@ class EditPwdActivity : BaseActivity() {
         val code = et_code.checkBlank("验证码不能为空") ?: return
         val pwd = et_pwd.checkBlank("密码不能为空") ?: return
 
-        doSetPwd(mobile, code, pwd)
+        when(type){
+            0 ->  {doTiXianPwd(mobile, code, pwd)}
+            1 ->  {doSetPwd(mobile, code, pwd)}
+        }
 
     }
 
@@ -150,6 +156,45 @@ class EditPwdActivity : BaseActivity() {
 
 
     fun doSetPwd(phone:String , code :String, pwd:String){
+        try {
+            var accountId by Preference("accountId","")
+            var param = HashMap<String, String>()
+            param.put("action", Constants.SHOPSETPASSWORD)
+            param.put("accountId", accountId)
+            param.put("phone", phone)
+            param.put("smsCode", code)
+            param.put("pwd", pwd)
+            mLoadingDialog?.show()
+
+
+            RetrofitManager.service.baseRequest(param)
+                    .subscribeOn(Schedulers.io())
+                    .unsubscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe({ result ->
+                        mLoadingDialog?.hide()
+                        Log.d(Constants.TAG, result.toString())
+                        if(result.code ==1){
+                            toast("设置成功")
+                            finish()
+                        }else{
+                            toast(result.msg)
+                        }
+                    }, { error ->
+                        mLoadingDialog?.hide()
+                        toast(error.toString())
+                        Log.d(Constants.TAG, error.toString())
+                    }
+                    )
+        } catch (e: Exception) {
+            mLoadingDialog?.hide()
+            Log.d(Constants.TAG, e.toString())
+        }
+
+
+    }
+
+    fun doTiXianPwd(phone:String , code :String, pwd:String){
         try {
             var accountId by Preference("accountId","")
             var param = HashMap<String, String>()

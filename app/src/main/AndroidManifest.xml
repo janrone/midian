@@ -171,6 +171,30 @@
         </activity>
 
         <activity
+            android:name=".activity.TiXianActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <activity
+            android:name=".activity.AddCardActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <activity
+            android:name=".activity.ZDdetailActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <activity
+            android:name=".activity.TiXianListActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <activity
             android:name=".wxapi.WXEntryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
@@ -185,6 +209,9 @@
             android:enabled="true"
             android:process=":remote" >
         </service>
+
+        <meta-data android:value="5c90b9a80cafb2414e001722" android:name="UMENG_APPKEY"/>
+        <meta-data android:value="fir" android:name="UMENG_CHANNEL"/>
     </application>
 
 </manifest>
