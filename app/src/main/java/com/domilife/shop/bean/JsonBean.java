@@ -7,9 +7,6 @@ import java.util.List;
 
 /**
  * TODO<json数据源>
- *
- * @author: 小嵩
- * @date: 2017/3/16 15:36
  */
 
 public class JsonBean implements IPickerViewData {

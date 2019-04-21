@@ -12,7 +12,7 @@ class DmWebActivity : BaseActivity() {
     }
 
     override fun initView() {
-
+        web_view.loadUrl(intent?.getStringExtra("url"))
     }
 
     override fun initData() {

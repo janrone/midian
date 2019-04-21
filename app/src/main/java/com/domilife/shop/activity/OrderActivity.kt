@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentStatePagerAdapter
 import com.domilife.shop.base.BaseActivity
-import com.domilife.shop.fragment.ProductFragment
 import kotlinx.android.synthetic.main.activity_order.*
 import com.umeng.socialize.UMShareAPI
 import android.content.Intent

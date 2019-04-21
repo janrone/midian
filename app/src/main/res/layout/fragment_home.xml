@@ -108,29 +108,36 @@
     </LinearLayout>
 
     <RelativeLayout
+        android:id="@+id/shop_toast"
         android:layout_width="match_parent"
         android:layout_height="34dp"
         android:background="#E62E2D32"
         android:orientation="horizontal">
 
         <ImageView
+            android:layout_marginLeft="8dp"
             android:id="@+id/iv_s"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginRight="6dp"
+            android:layout_marginRight="2dp"
             android:src="@mipmap/ic_home_msg" />
 
-        <TextView
-            android:id="@+id/tv_ad"
+        <com.sunfusheng.marqueeview.MarqueeView
+            android:id="@+id/marqueeView"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
             android:layout_toRightOf="@+id/iv_s"
-            android:text="这里是活动广播文案。。。"
-            android:textColor="#F1AA0E" />
+            android:layout_toLeftOf="@+id/iv_close"
+            android:layout_marginRight="8dp"
+            app:mvTextColor="#F1AA0E"
+            app:mvTextSize="14sp" />
+
 
         <ImageView
+            android:id="@+id/iv_close"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -263,6 +270,19 @@
 
 
     </LinearLayout>
+
+    <com.stx.xhb.xbanner.XBanner
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="8dp"
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:AutoPlayTime="3000"
+        app:pointsContainerBackground="#44aaaaaa"
+        app:pointsPosition="RIGHT"
+        app:tipTextSize="12sp"
+        app:pageChangeDuration="800"/>
 
     <RelativeLayout
         android:gravity="bottom"
