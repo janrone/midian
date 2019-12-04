@@ -13,10 +13,9 @@
    hellocharts，zxing ，TabLayout， DatePicker
    
    
-   感谢：
-   https://github.com/git-xuhao/KotlinMvp
-    
+   ### Demo 
    ![alt](demo_show.gif)
 
-   
+   感谢：
+      https://github.com/git-xuhao/KotlinMvp
   
