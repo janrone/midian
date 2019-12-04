@@ -15,14 +15,8 @@
    
    感谢：
    https://github.com/git-xuhao/KotlinMvp
-   
-   [演示](demo_show.gif)
-   
-   ![alt](demo_show.jpeg)
-   
-   <video id="video" controls="" preload="none" poster="demo_show.jpeg">
-   <source id="mp4" src="demo_show.mp4" type="video/mp4">
-   </video>
-   
+    
+   ![alt](demo_show.gif)
+
    
   
