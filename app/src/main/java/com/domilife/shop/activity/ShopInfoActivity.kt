@@ -124,7 +124,7 @@ class ShopInfoActivity : BaseActivity() {
     private fun showTips() {
         val msg = "服务费是什么：\n" +
                 "\n" +
-                "多米生活商户端为商家提供网络信息服务及相应软件（包括但不限于多米生活商户端APP，后台系统等）技术服务、商家门店在多米生活APP端展现并吸引会员消费的服务、其他多米生活平台提供的服务所收取的相关服务费用。每店的服务费率由多米生活拓店者与商家协商确定后在多米生活商户端APP提交确定。"
+                "XX生活商户端为商家提供网络信息服务及相应软件（包括但不限于XX生活商户端APP，后台系统等）技术服务、商家门店在XX生活APP端展现并吸引会员消费的服务、其他XX生活平台提供的服务所收取的相关服务费用。每店的服务费率由XX生活拓店者与商家协商确定后在XX生活商户端APP提交确定。"
         AlertDialog.Builder(this)
                 .setMessage(msg)
                 .setPositiveButton("确定", DialogInterface.OnClickListener { _, _ ->

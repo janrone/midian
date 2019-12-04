@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
         android:gravity="center"
-        android:text="温馨提示：未注册多米生活APP的手机号，\n
+        android:text="温馨提示：未注册XX生活APP的手机号，\n
 登录时即将自动注册，点击登录代表同意《用户服务协议》。"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent" />

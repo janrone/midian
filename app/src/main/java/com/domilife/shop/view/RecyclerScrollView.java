@@ -38,6 +38,7 @@ public class RecyclerScrollView extends ScrollView {
                 touch = (int) ev.getRawY();
                 break;
             case MotionEvent.ACTION_MOVE:
+                //暴力屏蔽。。。。5以上的事件直接传递给了内层的recyclerview
                 //  滑动距离大于slop值时，返回true
                 if (Math.abs((int) ev.getRawY() - touch) > slop) return true;
                 break;

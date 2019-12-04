@@ -14,8 +14,8 @@ kapt {
 
 // 在MobSDK的扩展中注册SMSSDK的相关信息
 MobSDK {
-    appKey "26b6a5e7043b6"
-    appSecret "8152378fb50bd89dcfa94f3705847b6a"
+    appKey "xxxx"
+    appSecret "xxxxx"
 
     SMSSDK {}
 }

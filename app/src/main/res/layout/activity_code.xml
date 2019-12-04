@@ -116,14 +116,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="6dp"
-                android:text="多米生活"
+                android:text="XX生活"
                 android:textColor="#4A4A4A"
                 android:textSize="14sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="邀请你加入多米小店"
+                android:text="邀请你加入XX小店"
                 android:textColor="#9B9B9B"
                 android:textSize="12sp" />
         </LinearLayout>

@@ -182,9 +182,16 @@ class LoginActivity : BaseActivity() {
         }
         val code = et_code.checkBlank("验证码不能为空") ?: return
 
-
+        //注释发信息验证
         //SMSSDK.submitVerificationCode("86", mobile, code)
-        shopsmslogin(mobile, code)
+        //shopsmslogin(mobile, code)
+
+        //模拟数据
+        var mock = "{\"code\":1,\"data\":{\"accountId\":1000984,\"isBindInvNo\":0,\"isCompQuality\":0,\"isCompShopMsg\":0,\"isShopPassed\":0},\"msg\":\"\"}"
+        var inCodeBean: InCodeBean = Gson().fromJson(mock,InCodeBean::class.java)
+        var intent= Intent(this, ShopInfoMainActivity::class.java)
+        intent.putExtra("data", inCodeBean)
+        startActivity(intent)
 
     }
 
@@ -211,9 +218,9 @@ class LoginActivity : BaseActivity() {
                         mLoadingDialog?.hide()
                         Log.d(Constants.TAG, result.toString())
                         if(result.code ==1){
-                            //var mock = "{\"code\":1,\"data\":{\"accountId\":1000984,\"isBindInvNo\":0,\"isCompQuality\":0,\"isCompShopMsg\":0,\"isShopPassed\":0},\"msg\":\"\"}"
-                            //var inCodeBean: InCodeBean = Gson().fromJson(mock,InCodeBean::class.java)
-                            var inCodeBean:InCodeBean= Gson().fromJson(result.data.toString(),InCodeBean::class.java)
+                            var mock = "{\"code\":1,\"data\":{\"accountId\":1000984,\"isBindInvNo\":0,\"isCompQuality\":0,\"isCompShopMsg\":0,\"isShopPassed\":0},\"msg\":\"\"}"
+                            var inCodeBean: InCodeBean = Gson().fromJson(mock,InCodeBean::class.java)
+                            //var inCodeBean:InCodeBean= Gson().fromJson(result.data.toString(),InCodeBean::class.java)
 
                             var accountId by Preference("accountId","")
                             accountId = inCodeBean.accountId.toString()

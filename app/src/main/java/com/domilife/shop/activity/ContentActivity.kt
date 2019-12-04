@@ -36,7 +36,7 @@ class ContentActivity : BaseActivity() {
 
         tv_save.setOnClickListener {
             val bitmap  = (iv_save.drawable as BitmapDrawable).bitmap
-            //val file_path = mPath+"多米生活公众号.png"
+            //val file_path = mPath+"XX生活公众号.png"
             //FileUtil.saveImage(file_path, bitmap)
             MediaStore.Images.Media.insertImage(
                     contentResolver,

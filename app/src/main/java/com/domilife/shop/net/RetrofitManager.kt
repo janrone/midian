@@ -90,7 +90,7 @@ object RetrofitManager{
     private fun getRetrofit(): Retrofit {
         // 获取retrofit的实例
         return Retrofit.Builder()
-                .baseUrl("https://shiziquan.com/shiziquan/")  //自己配置
+                .baseUrl("https://github.com/janrone/")  //自己配置
                 .client(getOkHttpClient())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(NullOnEmptyConverterFactory.create())

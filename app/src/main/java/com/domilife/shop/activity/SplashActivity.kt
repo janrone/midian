@@ -37,7 +37,7 @@ class SplashActivity : BaseActivity() {
         val perms = arrayOf(Manifest.permission.READ_PHONE_STATE,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA,
                 Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION)
-        EasyPermissions.requestPermissions(this, " 多米小店应用需要以下权限，请允许", 0, *perms)
+        EasyPermissions.requestPermissions(this, " XX小店应用需要以下权限，请允许", 0, *perms)
 
     }
 
