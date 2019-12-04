@@ -16,7 +16,7 @@
    感谢：
    https://github.com/git-xuhao/KotlinMvp
    
-   [视频演示][./demo_show.mp4]
+   [演示](demo_show.gif)
    
    ![alt](demo_show.jpeg)
    
